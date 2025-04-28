@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,20 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
+  const linkClasses = (path: string) =>
+    `text-gray-700 hover:text-sk-primary font-medium transition-colors duration-300 ${
+      isActive(path) ? 'text-sk-primary border-b-2 border-sk-primary' : ''
+    }`;
+
+  const mobileLinkClasses = (path: string) =>
+    `text-gray-700 hover:text-sk-primary font-medium py-2 px-3 rounded-md hover:bg-gray-100 ${
+      isActive(path) ? 'text-sk-primary bg-sk-blue/20' : ''
+    }`;
+
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-white shadow-sm'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,11 +51,11 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-10">
-            <Link to="/" className="text-gray-700 hover:text-sk-primary font-medium transition-colors duration-300">Home</Link>
-            <Link to="/about" className="text-gray-700 hover:text-sk-primary font-medium transition-colors duration-300">About</Link>
-            <Link to="/services" className="text-gray-700 hover:text-sk-primary font-medium transition-colors duration-300">Services</Link>
-            <Link to="/team" className="text-gray-700 hover:text-sk-primary font-medium transition-colors duration-300">Team</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-sk-primary font-medium transition-colors duration-300">Contact</Link>
+            <Link to="/" className={linkClasses('/')}>Home</Link>
+            <Link to="/about" className={linkClasses('/about')}>About</Link>
+            <Link to="/services" className={linkClasses('/services')}>Services</Link>
+            <Link to="/team" className={linkClasses('/team')}>Team</Link>
+            <Link to="/contact" className={linkClasses('/contact')}>Contact</Link>
           </nav>
 
           {/* Mobile Navigation Toggle */}
@@ -60,35 +75,35 @@ const Navbar = () => {
             <div className="flex flex-col space-y-4 py-4 px-2">
               <Link 
                 to="/" 
-                className="text-gray-700 hover:text-sk-primary font-medium py-2 px-3 rounded-md hover:bg-gray-100"
+                className={mobileLinkClasses('/')}
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 to="/about" 
-                className="text-gray-700 hover:text-sk-primary font-medium py-2 px-3 rounded-md hover:bg-gray-100"
+                className={mobileLinkClasses('/about')}
                 onClick={() => setIsOpen(false)}
               >
                 About
               </Link>
               <Link 
                 to="/services" 
-                className="text-gray-700 hover:text-sk-primary font-medium py-2 px-3 rounded-md hover:bg-gray-100"
+                className={mobileLinkClasses('/services')}
                 onClick={() => setIsOpen(false)}
               >
                 Services
               </Link>
               <Link 
                 to="/team" 
-                className="text-gray-700 hover:text-sk-primary font-medium py-2 px-3 rounded-md hover:bg-gray-100"
+                className={mobileLinkClasses('/team')}
                 onClick={() => setIsOpen(false)}
               >
                 Team
               </Link>
               <Link 
                 to="/contact" 
-                className="text-gray-700 hover:text-sk-primary font-medium py-2 px-3 rounded-md hover:bg-gray-100"
+                className={mobileLinkClasses('/contact')}
                 onClick={() => setIsOpen(false)}
               >
                 Contact
