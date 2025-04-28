@@ -10,7 +10,7 @@ interface TeamCardProps {
 
 const TeamCard: React.FC<TeamCardProps> = ({ name, position, image, description }) => {
   return (
-    <div className="team-card h-full">
+    <div className="team-card group h-full">
       <div className="mb-5 overflow-hidden rounded-lg">
         <img
           src={image}

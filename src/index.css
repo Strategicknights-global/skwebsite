@@ -94,7 +94,7 @@
   }
 
   .team-card {
-    @apply p-6 rounded-lg transition-all duration-300 hover:shadow-xl border border-gray-100 bg-white group;
+    @apply p-6 rounded-lg transition-all duration-300 hover:shadow-xl border border-gray-100 bg-white;
   }
 
   .team-card img {
