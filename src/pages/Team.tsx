@@ -1,9 +1,7 @@
-
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import TeamCard from '@/components/TeamCard';
 import ScrollReveal from '@/components/ScrollReveal';
-import { Button } from '@/components/ui/button';
+import JobApplicationForm from '@/components/JobApplicationForm';
 
 const TeamPage = () => {
   const teamMembers = [
@@ -121,11 +119,7 @@ const TeamPage = () => {
                         </li>
                       </ul>
                       <div className="mt-8">
-                        <Link to="/contact">
-                          <Button className="bg-sk-primary hover:bg-sk-primary/90 text-white py-3 px-6">
-                            Apply Now
-                          </Button>
-                        </Link>
+                        <JobApplicationForm />
                       </div>
                     </div>
                     <div className="hidden md:block">
