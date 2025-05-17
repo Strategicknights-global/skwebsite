@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
@@ -26,9 +25,9 @@ const ContactForm = () => {
     
     try {
       // Initialize EmailJS with your public key
-      emailjs.init("ZVjXM3qF-gALzLIio");
+      emailjs.init("ZVjXM3qF-gALzLIio"); // Your public key
       
-      // Prepare the template parameters - using the exact parameters you provided
+      // Prepare the template parameters
       const templateParams = {
         to_email: 'suganthivisnu666@gmail.com',
         from_name: formData.name,
@@ -41,8 +40,8 @@ const ContactForm = () => {
       
       // Send the email using EmailJS with your specific credentials
       const response = await emailjs.send(
-        'service_85qrmwy', 
-        'template_1jeutkn',
+        'service_85qrmwy', // Your service ID
+        'template_1jeutkn', // Your template ID
         templateParams
       );
       
