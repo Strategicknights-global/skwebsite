@@ -28,18 +28,18 @@ const ContactForm = () => {
       // Initialize EmailJS with your public key
       emailjs.init("ZVjXM3qF-gALzLIio");
       
-      // Prepare the template parameters - use proper parameter names that match your template
+      // Prepare the template parameters - using the exact parameters you provided
       const templateParams = {
+        to_email: 'suganthivisnu666@gmail.com',
         from_name: formData.name,
-        reply_to: formData.email,  // Changed from from_email to reply_to 
-        phone_number: formData.phone,  // Changed from phone to phone_number
+        from_email: formData.email,
+        phone: formData.phone,
         message: formData.message,
-        // We don't need to_email here as it should be configured in the EmailJS template
       };
       
       console.log("Sending email with params:", templateParams);
       
-      // Send the email using EmailJS
+      // Send the email using EmailJS with your specific credentials
       const response = await emailjs.send(
         'service_85qrmwy', 
         'template_1jeutkn',
