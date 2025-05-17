@@ -1,31 +1,100 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useForm } from "react-hook-form";
 import { Briefcase, Calendar, Mail, Phone, Upload, User, Send } from "lucide-react";
+import { toast } from "sonner";
+import emailjs from 'emailjs-com';
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-interface FormValues {
-  name: string;
-  email: string;
-  phone: string;
-  position: string;
-  experience: string;
-  resume: FileList;
-}
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email." }),
+  phone: z.string().min(10, { message: "Please enter a valid phone number." }),
+  position: z.string().min(2, { message: "Position is required." }),
+  experience: z.string().min(1, { message: "Experience is required." }),
+  resume: z.instanceof(FileList).refine(files => files.length > 0, {
+    message: "Resume is required."
+  })
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 const JobApplicationForm = () => {
-  const form = useForm<FormValues>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      position: "",
+      experience: "",
+    }
+  });
 
-  const onSubmit = (data: FormValues) => {
-    console.log('Form submitted:', data);
-    // Handle form submission here
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual EmailJS public key
+      
+      // Convert resume to base64 for email attachment
+      const file = data.resume[0];
+      const reader = new FileReader();
+      
+      reader.onload = async (event) => {
+        if (event.target && event.target.result) {
+          const base64File = event.target.result.toString().split(',')[1]; // Remove the data:application/pdf;base64, part
+          
+          // Prepare the template parameters
+          const templateParams = {
+            to_email: 'suganthivisnu666@gmail.com',
+            from_name: data.name,
+            from_email: data.email,
+            phone: data.phone,
+            position: data.position,
+            experience: data.experience,
+            resume_name: file.name,
+            resume_content: base64File
+          };
+          
+          // Send the email using EmailJS
+          await emailjs.send(
+            'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+            'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID for job applications
+            templateParams
+          );
+          
+          toast.success('Application submitted successfully!');
+          setIsOpen(false);
+          form.reset();
+        }
+      };
+      
+      reader.onerror = () => {
+        toast.error('Error reading the resume file.');
+      };
+      
+      reader.readAsDataURL(file);
+      
+    } catch (error) {
+      console.error('Error sending application:', error);
+      toast.error('Failed to submit application. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button className="bg-sk-primary hover:bg-sk-primary/90 text-white py-3 px-6">
           Apply Now
@@ -36,6 +105,9 @@ const JobApplicationForm = () => {
           <DialogTitle className="text-2xl font-bold text-gray-900 mb-4">
             Job Application
           </DialogTitle>
+          <DialogDescription className="text-gray-500">
+            Fill out the form below to apply. We'll review your application and get back to you soon.
+          </DialogDescription>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -146,8 +218,13 @@ const JobApplicationForm = () => {
               )}
             />
 
-            <Button type="submit" className="w-full bg-sk-primary hover:bg-sk-primary/90">
-              <Send className="mr-2 h-4 w-4" /> Submit Application
+            <Button 
+              type="submit" 
+              className="w-full bg-sk-primary hover:bg-sk-primary/90"
+              disabled={isSubmitting}
+            >
+              <Send className="mr-2 h-4 w-4" /> 
+              {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </Button>
           </form>
         </Form>
