@@ -44,7 +44,7 @@ const JobApplicationForm = () => {
     
     try {
       // Initialize EmailJS with your public key
-      emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual EmailJS public key
+      emailjs.init("ZVjXM3qF-gALzLIio"); // You'll need to replace this with your actual EmailJS public key
       
       // Convert resume to base64 for email attachment
       const file = data.resume[0];
@@ -68,8 +68,8 @@ const JobApplicationForm = () => {
           
           // Send the email using EmailJS
           await emailjs.send(
-            'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-            'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID for job applications
+            'service_85qrmwy', // Replace with your EmailJS service ID
+            'template_1jeutkn', // Replace with your EmailJS template ID for job applications
             templateParams
           );
           

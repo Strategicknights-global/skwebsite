@@ -25,7 +25,7 @@ const ContactForm = () => {
     
     try {
       // Initialize EmailJS with your public key
-      emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual EmailJS public key
+      emailjs.init("ZVjXM3qF-gALzLIio"); // You'll need to replace this with your actual EmailJS public key
       
       // Prepare the template parameters
       const templateParams = {
@@ -38,8 +38,8 @@ const ContactForm = () => {
       
       // Send the email using EmailJS
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_85qrmwy', // Replace with your EmailJS service ID
+        'template_1jeutkn', // Replace with your EmailJS template ID
         templateParams
       );
       
