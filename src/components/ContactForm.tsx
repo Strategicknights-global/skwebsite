@@ -1,7 +1,7 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
-import emailjs from 'emailjs-com';
 import { Textarea } from '@/components/ui/textarea';
 
 const ContactForm = () => {
@@ -24,35 +24,38 @@ const ContactForm = () => {
     setLoading(true);
     
     try {
-      // Initialize EmailJS with your public key
-      emailjs.init("ZVjXM3qF-gALzLIio"); // Your public key
+      // Create form data object for Web3Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', 'YOUR-ACCESS-KEY-HERE'); // Replace with your Web3Forms access key
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('subject', 'New Contact Form Submission');
       
-      // Prepare the template parameters
-      const templateParams = {
-        to_email: 'suganthivisnu666@gmail.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
-      };
+      console.log("Sending form data to Web3Forms");
       
-      console.log("Sending email with params:", templateParams);
-      
-      // Send the email using EmailJS with your specific credentials
-      const response = await emailjs.send(
-        'service_85qrmwy', // Your service ID
-        'template_1jeutkn', // Your template ID
-        templateParams
-      );
-      
-      console.log("Email sent successfully:", response);
-      toast.success('Message sent successfully! We will contact you soon.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
+      // Send the data using Web3Forms API
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
       });
+      
+      const responseData = await response.json();
+      console.log("Web3Forms response:", responseData);
+      
+      if (responseData.success) {
+        toast.success('Message sent successfully! We will contact you soon.');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      } else {
+        throw new Error(responseData.message || 'Failed to send message');
+      }
     } catch (error) {
       console.error('Error sending email:', error);
       toast.error('Failed to send message. Please try again later.');
