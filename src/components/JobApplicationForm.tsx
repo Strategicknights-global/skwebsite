@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -44,7 +43,7 @@ const JobApplicationForm = () => {
     
     try {
       // Initialize EmailJS with your public key
-      emailjs.init("ZVjXM3qF-gALzLIio"); // You'll need to replace this with your actual EmailJS public key
+      emailjs.init("ZVjXM3qF-gALzLIio");
       
       // Convert resume to base64 for email attachment
       const file = data.resume[0];
@@ -52,35 +51,43 @@ const JobApplicationForm = () => {
       
       reader.onload = async (event) => {
         if (event.target && event.target.result) {
-          const base64File = event.target.result.toString().split(',')[1]; // Remove the data:application/pdf;base64, part
+          const base64File = event.target.result.toString().split(',')[1];
           
-          // Prepare the template parameters
+          // Prepare the template parameters - use proper parameter names that match your template
           const templateParams = {
-            to_email: 'suganthivisnu666@gmail.com',
             from_name: data.name,
-            from_email: data.email,
-            phone: data.phone,
+            reply_to: data.email,
+            phone_number: data.phone,
             position: data.position,
             experience: data.experience,
             resume_name: file.name,
             resume_content: base64File
+            // We don't need to_email here as it should be configured in the EmailJS template
           };
           
+          console.log("Sending job application with params:", {
+            ...templateParams,
+            resume_content: '[BASE64_FILE_CONTENT_TRUNCATED]'
+          });
+          
           // Send the email using EmailJS
-          await emailjs.send(
-            'service_85qrmwy', // Replace with your EmailJS service ID
-            'template_1jeutkn', // Replace with your EmailJS template ID for job applications
+          const response = await emailjs.send(
+            'service_85qrmwy',
+            'template_1jeutkn',
             templateParams
           );
           
+          console.log("Job application sent successfully:", response);
           toast.success('Application submitted successfully!');
           setIsOpen(false);
           form.reset();
         }
       };
       
-      reader.onerror = () => {
+      reader.onerror = (error) => {
+        console.error("Error reading file:", error);
         toast.error('Error reading the resume file.');
+        setIsSubmitting(false);
       };
       
       reader.readAsDataURL(file);
@@ -88,7 +95,6 @@ const JobApplicationForm = () => {
     } catch (error) {
       console.error('Error sending application:', error);
       toast.error('Failed to submit application. Please try again later.');
-    } finally {
       setIsSubmitting(false);
     }
   };
