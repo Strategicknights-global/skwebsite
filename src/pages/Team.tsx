@@ -7,34 +7,34 @@ const TeamPage = () => {
   const teamMembers = [
     {
       name: "Sathish Kumar",
-      position: "CEO & Founder",
+      position: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-      description: "Visionary leader with expertise in digital transformation and business strategy."
+      description: ""
     },
     {
       name: "Loguhariharan P V",
-      position: "Creative Director",
+      position: "Director of Strategy & Operations",
       image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-      description: "A creative director with a passion for innovative design solutions."
+      description: ""
     },
-    {
+    /*{
       name: "Srithar Jayakumar",
       position: "Technical Lead",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       description: "Expert in full-stack development and emerging technologies."
-    },
+    }*/,
     {
       name: "Arshad Ahmed A",
-      position: "UX/UI Lead",
+      position: "Director of Technology & Innovation",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-      description: "User experience expert focused on creating intuitive and engaging interfaces."
+      description: ""
     },
-    {
+    /*{
       name: "Kiruthika Senthil Kumar",
       position: "Content Strategist",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       description: "Content expert specializing in SEO and engaging storytelling."
-    }
+    }*/
   ];
 
   useEffect(() => {

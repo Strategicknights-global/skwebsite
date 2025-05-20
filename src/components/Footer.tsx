@@ -86,14 +86,14 @@ const Footer = () => {
               <div className="mb-3 text-gray-300">
                 <p>strategicknights.global@gmail.com</p>
               </div>
-              <div className="mb-3 text-gray-300">
+              {/*<div className="mb-3 text-gray-300">
                 <p>+91 96773 91118</p>
               </div>
               <div className="text-gray-300">
                 <p>No.72, Vedimarundhu Ramasamy Street,</p>
                 <p>Nethimedu,</p>
                 <p>Salem - 636002.</p>
-              </div>
+              </div>*/}
             </address>
           </div>
         </div>

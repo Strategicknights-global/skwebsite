@@ -37,19 +37,19 @@ const ContactPage = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
                 <div className="bg-gray-50 rounded-lg p-6 mb-8">
-                  <h3 className="text-xl font-bold mb-4">Office Address</h3>
+                  {/*<h3 className="text-xl font-bold mb-4">Office Address</h3>
                   <p className="text-gray-700 mb-4">
                     No.72, Vedimarundhu Ramasamy Street,<br />
                     Nethimedu,<br />
                     Salem - 636002.
-                  </p>
+                  </p>*/}
 
-                  <h3 className="text-xl font-bold mb-4">Phone</h3>
+                  {/*<h3 className="text-xl font-bold mb-4">Phone</h3>
                   <p className="text-gray-700 mb-4">
                     <a href="tel:+919677391118" className="hover:text-sk-primary transition-colors">
                       +91 96773 91118
                     </a>
-                  </p>
+                  </p>*/}
 
                   <h3 className="text-xl font-bold mb-4">Email</h3>
                   <p className="text-gray-700 mb-4">
@@ -60,8 +60,8 @@ const ContactPage = () => {
 
                   <h3 className="text-xl font-bold mb-4">Business Hours</h3>
                   <p className="text-gray-700">
-                    Monday - Friday: 9:30 AM - 6:00 PM<br />
-                    Saturday - Sunday: Closed
+                    Monday - Saturday: 09:30 AM - 6:30 PM<br />
+                    Sunday: Closed
                   </p>
                 </div>
 
