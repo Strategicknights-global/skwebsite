@@ -107,9 +107,17 @@ const ContactPage = () => {
               <h2 className="text-3xl font-bold mb-6 text-center">Our Location</h2>
               <div className="rounded-lg overflow-hidden shadow-lg h-96">
                 {/* Embed a Google Maps iframe here - placeholder for now */}
-                <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-                  <p className="text-gray-600">Map placeholder - Add Google Maps embed here</p>
-                </div>
+                <div className="w-full h-full">
+  <iframe
+    title="KS Globals Location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3543.992094700622!2d76.9628761!3d11.0207057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8594535891e4f%3A0x39ce22dfbd6cd828!2sK%20S%20Globals!5e1!3m2!1sen!2sin!4v1747722478455!5m2!1sen!2sin"
+    width="100%"
+    height="400"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
               </div>
             </div>
           </ScrollReveal>
