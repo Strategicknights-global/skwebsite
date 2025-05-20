@@ -4,9 +4,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useForm } from "react-hook-form";
-import { Briefcase, Calendar, Mail, Phone, Upload, User, Send } from "lucide-react";
+import { Briefcase, Calendar, Mail, Phone, Send, Upload, User } from "lucide-react";
 import { toast } from "sonner";
-import emailjs from 'emailjs-com';
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -16,9 +15,7 @@ const formSchema = z.object({
   phone: z.string().min(10, { message: "Please enter a valid phone number." }),
   position: z.string().min(2, { message: "Position is required." }),
   experience: z.string().min(1, { message: "Experience is required." }),
-  resume: z.instanceof(FileList).refine(files => files.length > 0, {
-    message: "Resume is required."
-  })
+  resume: z.string().min(10, { message: "Resume text or link is required." }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -26,7 +23,7 @@ type FormValues = z.infer<typeof formSchema>;
 const JobApplicationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,66 +32,37 @@ const JobApplicationForm = () => {
       phone: "",
       position: "",
       experience: "",
+      resume: ""
     }
   });
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    
+
     try {
-      // Initialize EmailJS with your public key
-      emailjs.init("ZVjXM3qF-gALzLIio");
-      
-      // Convert resume to base64 for email attachment
-      const file = data.resume[0];
-      const reader = new FileReader();
-      
-      reader.onload = async (event) => {
-        if (event.target && event.target.result) {
-          const base64File = event.target.result.toString().split(',')[1];
-          
-          // Prepare the template parameters - use proper parameter names that match your template
-          const templateParams = {
-            from_name: data.name,
-            reply_to: data.email,
-            phone_number: data.phone,
-            position: data.position,
-            experience: data.experience,
-            resume_name: file.name,
-            resume_content: base64File
-            // We don't need to_email here as it should be configured in the EmailJS template
-          };
-          
-          console.log("Sending job application with params:", {
-            ...templateParams,
-            resume_content: '[BASE64_FILE_CONTENT_TRUNCATED]'
-          });
-          
-          // Send the email using EmailJS
-          const response = await emailjs.send(
-            'service_85qrmwy',
-            'template_1jeutkn',
-            templateParams
-          );
-          
-          console.log("Job application sent successfully:", response);
-          toast.success('Application submitted successfully!');
-          setIsOpen(false);
-          form.reset();
-        }
-      };
-      
-      reader.onerror = (error) => {
-        console.error("Error reading file:", error);
-        toast.error('Error reading the resume file.');
-        setIsSubmitting(false);
-      };
-      
-      reader.readAsDataURL(file);
-      
+      const formData = new FormData();
+      formData.append("access_key", "a5706106-8fd3-4d11-8f24-ca6ebb91ef0d"); // Web3Forms access key
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        toast.success('Application submitted successfully!');
+        setIsOpen(false);
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.message || 'Failed to submit application.');
+      }
     } catch (error) {
       console.error('Error sending application:', error);
       toast.error('Failed to submit application. Please try again later.');
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -106,6 +74,7 @@ const JobApplicationForm = () => {
           Apply Now
         </Button>
       </DialogTrigger>
+
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-gray-900 mb-4">
@@ -115,108 +84,51 @@ const JobApplicationForm = () => {
             Fill out the form below to apply. We'll review your application and get back to you soon.
           </DialogDescription>
         </DialogHeader>
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <User className="h-4 w-4" />
-                    Full Name
-                  </FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter your full name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" />
-                    Email
-                  </FormLabel>
-                  <FormControl>
-                    <Input type="email" placeholder="Enter your email" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <Phone className="h-4 w-4" />
-                    Phone Number
-                  </FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter your phone number" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="position"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <Briefcase className="h-4 w-4" />
-                    Position Applied For
-                  </FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter the position you're applying for" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="experience"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    Years of Experience
-                  </FormLabel>
-                  <FormControl>
-                    <Input type="number" placeholder="Enter years of experience" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            {['name', 'email', 'phone', 'position', 'experience'].map((field) => (
+              <FormField
+                key={field}
+                control={form.control}
+                name={field as keyof FormValues}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center gap-2">
+                      {field.name === "name" && <User className="h-4 w-4" />}
+                      {field.name === "email" && <Mail className="h-4 w-4" />}
+                      {field.name === "phone" && <Phone className="h-4 w-4" />}
+                      {field.name === "position" && <Briefcase className="h-4 w-4" />}
+                      {field.name === "experience" && <Calendar className="h-4 w-4" />}
+                      {field.name.charAt(0).toUpperCase() + field.name.slice(1)}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={`Enter your ${field.name}`}
+                        {...field}
+                        type={field.name === "email" ? "email" : field.name === "phone" ? "tel" : "text"}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            ))}
 
             <FormField
               control={form.control}
               name="resume"
-              render={({ field: { value, onChange, ...field } }) => (
+              render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex items-center gap-2">
                     <Upload className="h-4 w-4" />
-                    Resume
+                    Resume (Text or Link)
                   </FormLabel>
                   <FormControl>
-                    <Input
-                      type="file"
-                      accept=".pdf,.doc,.docx"
-                      onChange={(e) => onChange(e.target.files)}
+                    <textarea
+                      placeholder="Paste your resume text or link here"
                       {...field}
+                      className="border rounded px-3 py-2 w-full h-28 resize-none"
                     />
                   </FormControl>
                   <FormMessage />
@@ -224,12 +136,12 @@ const JobApplicationForm = () => {
               )}
             />
 
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="w-full bg-sk-primary hover:bg-sk-primary/90"
               disabled={isSubmitting}
             >
-              <Send className="mr-2 h-4 w-4" /> 
+              <Send className="mr-2 h-4 w-4" />
               {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </Button>
           </form>

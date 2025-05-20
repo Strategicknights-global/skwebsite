@@ -26,7 +26,7 @@ const ContactForm = () => {
     try {
       // Create form data object for Web3Forms
       const formDataToSend = new FormData();
-      formDataToSend.append('access_key', 'YOUR-ACCESS-KEY-HERE'); // Replace with your Web3Forms access key
+      formDataToSend.append('access_key', 'a5706106-8fd3-4d11-8f24-ca6ebb91ef0d'); // Replace with your Web3Forms access key
       formDataToSend.append('name', formData.name);
       formDataToSend.append('email', formData.email);
       formDataToSend.append('phone', formData.phone);
