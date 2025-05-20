@@ -125,53 +125,6 @@ const ServicesPage = () => {
   ];
 
   const pricingPlans = [
-    {
-      name: "Starter",
-      price: "₹29,999",
-      period: "/month",
-      description: "Perfect for small businesses starting their digital journey",
-      features: [
-        "Basic Website Design",
-        "Social Media Setup",
-        "Basic SEO Package",
-        "Monthly Performance Report",
-        "Email Support"
-      ],
-      cta: "Get Started"
-    },
-    {
-      name: "Professional",
-      price: "₹59,999",
-      period: "/month",
-      description: "Ideal for growing businesses seeking comprehensive solutions",
-      features: [
-        "Advanced Website Design",
-        "Social Media Management",
-        "Complete SEO Package",
-        "Weekly Performance Reports",
-        "Content Marketing",
-        "Priority Support",
-        "Marketing Automation"
-      ],
-      cta: "Get Started",
-      highlight: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      description: "Tailored solutions for large organizations",
-      features: [
-        "Custom Website Development",
-        "Full-Service Digital Marketing",
-        "Advanced SEO & Analytics",
-        "Daily Performance Tracking",
-        "Dedicated Account Manager",
-        "24/7 Priority Support",
-        "Custom Integrations"
-      ],
-      cta: "Get Started"
-    }
   ];
 
   return (
@@ -249,12 +202,7 @@ const ServicesPage = () => {
       {/* Pricing Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <h2 className="section-heading">Transparent Pricing</h2>
-            <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-              Choose the plan that best fits your business needs
-            </p>
-          </ScrollReveal>
+      
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => (
