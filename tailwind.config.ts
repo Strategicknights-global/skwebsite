@@ -67,8 +67,8 @@ export default {
 				'sk-gray': '#eeeeee',
 				'sk-blue': '#dbeaec',
 				'sk-light-green': '#cce49e',
-				'sk-green': '#808080',
-				'sk-primary': '#FFD700',
+				'sk-green': '#EDEDED',
+				'sk-primary': '#F4C542',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
