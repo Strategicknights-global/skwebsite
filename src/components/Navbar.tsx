@@ -30,8 +30,8 @@ const Navbar = () => {
   };
 
   const linkClasses = (path: string) =>
-    `text-gray-700 hover:text-sk-primary font-medium transition-colors duration-300 ${
-      isActive(path) ? 'text-sk-primary border-b-2 border-sk-primary' : ''
+    `text-white hover:text-sk-white font-medium transition-colors duration-300 ${
+      isActive(path) ? 'text-sk-white border-b-2 border-sk-white' : ''
     }`;
 
   const mobileLinkClasses = (path: string) =>
@@ -40,7 +40,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-white shadow-sm'}`}>
+    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-sk-primary/95 backdrop-blur-sm shadow-md' : 'bg-sk-primary shadow-sm'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
