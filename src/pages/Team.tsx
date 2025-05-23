@@ -23,12 +23,12 @@ const TeamPage = () => {
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       description: "Expert in full-stack development and emerging technologies."
     }*/
-    {
+    /*{
       name: "Arshad Ahmed A",
       position: "Director of Technology & Innovation",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       description: ""
-    },
+    }*/,
     /*{
       name: "Kiruthika Senthil Kumar",
       position: "Content Strategist",
