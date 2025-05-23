@@ -2,19 +2,22 @@ import React, { useEffect } from 'react';
 import TeamCard from '@/components/TeamCard';
 import ScrollReveal from '@/components/ScrollReveal';
 import JobApplicationForm from '@/components/JobApplicationForm';
+import Preethi from '@/Image/Preethi.png';
+import Logu from '@/Image/Logu.png';
+import Sathish from '@/Image/Sathish.jpeg';
 
 const TeamPage = () => {
   const teamMembers = [
     {
       name: "Sathish Kumar",
       position: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      image:Sathish,
       description: ""
     },
     {
       name: "Loguhariharan P V",
       position: "Director of Strategy & Operations",
-      image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      image: Logu,
       description: ""
     },
     /*{
@@ -38,8 +41,8 @@ const TeamPage = () => {
     {
       name: "Preethi Ponnusamy A",
       position: "Director Of Impact",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-      description: "Content expert specializing in SEO and engaging storytelling."
+      image: Preethi,
+      description: ""
     }
   ];
 
