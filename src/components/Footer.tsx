@@ -84,7 +84,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <address className="not-italic">
               <div className="mb-3 text-gray-300">
-                <p>strategicknights.global@gmail.com</p>
+                <p>contact@strategicknights.com</p>
               </div>
               {/*<div className="mb-3 text-gray-300">
                 <p>+91 96773 91118</p>

@@ -122,6 +122,11 @@ const ServicesPage = () => {
       title: "Optimization",
       description: "Regular analysis and optimization for best results."
     },
+    {
+      number: "04",
+      title: "Optimization",
+      description: "Regular analysis and optimization for best results."
+    },
   ];
 
   const pricingPlans = [

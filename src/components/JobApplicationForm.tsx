@@ -122,7 +122,7 @@ const JobApplicationForm = () => {
                 <FormItem>
                   <FormLabel className="flex items-center gap-2">
                     <Upload className="h-4 w-4" />
-                    Resume (Text or Link)
+                    Resume (Link)
                   </FormLabel>
                   <FormControl>
                     <textarea

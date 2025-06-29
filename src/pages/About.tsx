@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '@/components/ScrollReveal';
+import Ksglobals from '@/Image/Ksglobals.png';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -176,10 +177,31 @@ const AboutPage = () => {
 
           <div className="flex flex-wrap justify-center items-center gap-12">
             <ScrollReveal>
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <button className="text-2xl font-bold text-center text-sk-primary" /*onClick={() => window.location.href = "https://ksglobals.com"}*/>KS Globals</button>
-              </div>
-            </ScrollReveal>
+  <div className="bg-white p-8 rounded-lg shadow-md flex justify-center items-center">
+    <button
+      className="text-2xl font-bold text-center text-sk-primary"
+      onClick={() => window.location.href = "https://ksglobals.com"}
+    >
+      KS Globals
+    </button>
+  </div>
+</ScrollReveal>
+
+<ScrollReveal>
+  <div className="bg-white p-8 rounded-lg shadow-md flex justify-center items-center">
+    <button
+      className="text-2xl font-bold text-center text-sk-primary"
+      onClick={() => window.location.href = "https://ksglobals.com"}
+    >
+      <img
+        src={Ksglobals} // Replace this with the correct import or public path
+        alt="KS Globals"
+        className="h-8 object-contain"
+      />
+    </button>
+  </div>
+</ScrollReveal>
+
             {/* Add more partners as needed */}
           </div>
         </div>
@@ -215,7 +237,7 @@ const AboutPage = () => {
 
             <ScrollReveal delay={100}>
               <div className="stat-card">
-                <div className="text-4xl font-bold text-sk-primary mb-2">100%</div>
+                <div className="text-4xl font-bold text-sk-primary mb-2">95%</div>
                 <div className="text-gray-600 font-medium">Client Satisfaction</div>
               </div>
             </ScrollReveal>

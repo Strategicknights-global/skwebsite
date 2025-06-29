@@ -13,8 +13,6 @@ const HomePage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      description: "Custom, responsive websites that engage and convert them to Leads.",
-      features: ["Custom UI/UX Design", "Responsive Development", "SEO-friendly Architecture"]
     },
     {
       title: "E-commerce Development",
@@ -23,8 +21,6 @@ const HomePage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
         </svg>
       ),
-      description: "Scalable online stores with seamless checkout experiences and inventory management.",
-      features: ["Custom E-commerce Solutions", "Payment Gateway Integration", "Inventory Management"]
     },
     {
       title: "Software Development",
@@ -33,8 +29,6 @@ const HomePage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      description: "Custom software solutions tailored to your business needs and objectives.",
-      features: ["Custom App Development", "API Integration", "Cloud-based Solutions","SaaS Development"]
     },
     {
       title: "SEO",
@@ -43,8 +37,6 @@ const HomePage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
         </svg>
       ),
-      description: "Data-driven SEO strategies for higher rankings and increased organic traffic.",
-      features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Link Building","Competitor Analysis"]
     },
     {
       title: "Digital Marketing",
@@ -53,8 +45,6 @@ const HomePage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
         </svg>
       ),
-      description: "Comprehensive digital marketing campaigns that drive traffic and increase conversions.",
-      features: ["Marketing Strategy", "Campaign Management", "Analytics & Reporting"]
     },
     {
       title: "Social Media Marketing",
@@ -63,9 +53,7 @@ const HomePage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ),
-      description: "Engaging social media presence and management to build brand awareness.",
-      features: ["Platform Strategy", "Content Creation", "Community Management"]
-    },
+      },
   ];
 
   const benefits = [
@@ -151,8 +139,6 @@ const HomePage = () => {
                 <ServiceCard
                   title={service.title}
                   icon={service.icon}
-                  description={service.description}
-                  features={service.features}
                 />
               </ScrollReveal>
             ))}

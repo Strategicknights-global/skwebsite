@@ -54,13 +54,13 @@ const ContactPage = () => {
                   <h3 className="text-xl font-bold mb-4">Email</h3>
                   <p className="text-gray-700 mb-4">
                     <a href="mailto:strategicknights.global@gmail.com" className="hover:text-sk-primary transition-colors">
-                      strategicknights.global@gmail.com
+                      contact@strategicknights.com
                     </a>
                   </p>
 
                   <h3 className="text-xl font-bold mb-4">Business Hours</h3>
                   <p className="text-gray-700">
-                    Monday - Saturday: 09:30 AM - 6:30 PM<br />
+                    Monday - Saturday: 10:00 AM - 7:00 PM<br />
                     Sunday: Closed
                   </p>
                 </div>
