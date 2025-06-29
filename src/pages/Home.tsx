@@ -13,7 +13,7 @@ const HomePage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      description: "Custom, responsive websites that engage and convert visitors into customers.",
+      description: "Custom, responsive websites that engage and convert them to Leads.",
       features: ["Custom UI/UX Design", "Responsive Development", "SEO-friendly Architecture"]
     },
     {
@@ -34,7 +34,7 @@ const HomePage = () => {
         </svg>
       ),
       description: "Custom software solutions tailored to your business needs and objectives.",
-      features: ["Custom App Development", "API Integration", "Cloud-based Solutions"]
+      features: ["Custom App Development", "API Integration", "Cloud-based Solutions","SaaS Development"]
     },
     {
       title: "SEO",
@@ -44,7 +44,7 @@ const HomePage = () => {
         </svg>
       ),
       description: "Data-driven SEO strategies for higher rankings and increased organic traffic.",
-      features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Link Building"]
+      features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Link Building","Competitor Analysis"]
     },
     {
       title: "Digital Marketing",
@@ -63,7 +63,7 @@ const HomePage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ),
-      description: "Engaging social media presence and management to build brand awareness and loyalty.",
+      description: "Engaging social media presence and management to build brand awareness.",
       features: ["Platform Strategy", "Content Creation", "Community Management"]
     },
   ];
@@ -111,11 +111,11 @@ const HomePage = () => {
                 Transform Your Digital Presence
               </h1>
               <p className="text-xl text-gray-700 mb-8">
-                Strategic Knights delivers premium digital marketing solutions that drive growth and elevate your brand to new heights.
+                Strategic Knights is your growth partner - blending digital marketing, SEO, social media magic, and powerful tech solutions to help your brand rise, shine, and lead. We craft strategies and build software that move you forward, fast.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact" className="cta-button-primary">
-                  Get Started
+                  Kick Start
                 </Link>
                 <Link to="/services" className="cta-button-secondary">
                   Learn More
@@ -127,7 +127,7 @@ const HomePage = () => {
               <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-sk-primary/20 rounded-full blur-3xl"></div>
               <img 
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
-                alt="Digital Marketing Team" 
+                alt="SEO experts planning brand growth strategy" 
                 className="relative z-10 rounded-lg shadow-2xl w-full"
               />
             </div>

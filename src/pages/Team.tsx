@@ -38,12 +38,12 @@ const TeamPage = () => {
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       description: "Content expert specializing in SEO and engaging storytelling."
     }*/
-    {
+    /*{
       name: "Preethi Ponnusamy A",
       position: "Director Of Impact",
       image: Preethi,
       description: ""
-    }
+    }*/
   ];
 
   useEffect(() => {
