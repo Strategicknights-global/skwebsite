@@ -30,14 +30,14 @@ const ServicesPage = () => {
       features: ["Custom E-commerce Solutions", "Payment Gateway Integration", "Inventory Management", "Mobile Commerce"]
     },
     {
-      title: "SEO Optimization",
-      description: "Improve your search rankings and drive organic traffic",
+      title: "Data & AI Solutions",
+      description: "Automate, predict, personalize, and optimize business with AI-driven solutions.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
         </svg>
       ),
-      features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Link Building"]
+      features: ["Generative AI", "Computer Vision & Image Recognition", "Predictive Analytics & BI Dashboards", "AI Automation & Chatbots"]
     },
     {
       title: "Digital Marketing",
@@ -50,17 +50,17 @@ const ServicesPage = () => {
       features: ["Marketing Strategy", "Campaign Management", "Analytics & Reporting", "ROI Optimization"]
     },
     {
-      title: "Social Media Marketing",
-      description: "Build and engage your social media audience",
+      title: "Cybersecurity and Website Protection",
+      description: "Secure, scan, detect, and defend with complete website protection solutions.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ),
-      features: ["Platform Strategy", "Content Creation", "Community Management", "Paid Advertising"]
+      features: ["SSL Setup & Renewal", "Malware Scanning & Removal", "Firewall & Threat Detection", "Peneration testing"]
     },
     {
-      title: "Brand Strategy",
+      title: "Branding and Identity Design",
       description: "Build a strong, memorable brand identity",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,63 +70,67 @@ const ServicesPage = () => {
       features: ["Brand Development", "Visual Identity", "Brand Guidelines", "Brand Messaging"]
     },
     {
-      title: "PPC Advertising",
-      description: "Maximize ROI with targeted paid advertising",
+      title: "Mobile App development",
+      description: "Design, develop, and deploy high-performance mobile apps for all platforms.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
         </svg>
+
+
       ),
-      features: ["Campaign Strategy", "Ad Creation", "Bid Management", "Performance Analysis"]
+      features: ["Cross-platform app development (iOS & Android)", "UI/UX design for mobile interfaces", "Backend integration & API development", "App deployment & maintenance support"]
     },
     {
-      title: "Email Marketing",
-      description: "Drive conversions with targeted email campaigns",
+      title: "Video Marketing & Production",
+      description: "Engage audiences with impactful videos, shorts, and YouTube SEO.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25Z" />
         </svg>
       ),
-      features: ["Campaign Strategy", "Email Design", "Automation", "Analytics"]
+      features: ["Promo/Explainer Video Creation", "Reels & Shorts for Social Media", "YouTube Marketing & SEO"]
     },
     {
-      title: "Content Marketing",
-      description: "Create compelling content that connects",
+      title: "Marketplace Management",
+      description: "Boost visibility and sales through optimized marketplace presence and ads.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-        </svg>
+       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+       <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/>
+      </svg>
+
+
       ),
-      features: ["Content Strategy", "Content Creation", "Distribution", "Performance Analysis"]
+      features: ["Amazon/Flipkart Seller Account Setup", "Product Listing Optimization", "Marketplace Ads Management", "Performance Analysis"]
     },
   ];
 
   const processSteps = [
     {
-      number: "01",
-      title: "Discovery",
-      description: "We analyze your needs and goals to create a strategy."
-    },
-    {
-      number: "02",
-      title: "Planning",
-      description: "Detailed project planning and resource allocation."
-    },
-    {
-      number: "03",
-      title: "Execution",
-      description: "Implementation of strategies with continuous monitoring."
-    },
-    {
-      number: "04",
-      title: "Optimization",
-      description: "Regular analysis and optimization for best results."
-    },
-    {
-      number: "04",
-      title: "Optimization",
-      description: "Regular analysis and optimization for best results."
-    },
+  number: "01",
+  title: "Discovery",
+  description: "We analyze your needs and goals to create a strategy."
+},
+{
+  number: "02",
+  title: "Planning",
+  description: "Detailed project planning and resource allocation."
+},
+{
+  number: "03",
+  title: "Execution",
+  description: "Implementation of strategies with continuous monitoring."
+},
+{
+  number: "04",
+  title: "Optimization",
+  description: "Regular analysis and optimization for best results."
+},
+{
+  number: "05",
+  title: "Reporting & Scaling",
+  description: "Performance reports and scaling strategies for long-term growth."
+}
   ];
 
   const pricingPlans = [
@@ -181,28 +185,30 @@ const ServicesPage = () => {
       </section>
 
       {/* Our Process */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <h2 className="section-heading">Our Process</h2>
-            <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-              A systematic approach to deliver exceptional results
-            </p>
-          </ScrollReveal>
+        <section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <ScrollReveal>
+      <h2 className="section-heading">Our Process</h2>
+      <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        A systematic approach to deliver exceptional results
+      </p>
+    </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <ScrollReveal key={step.number} delay={index * 150}>
-                <div className="bg-white p-8 rounded-lg shadow-md border-t-4 border-sk-primary h-full">
-                  <div className="text-3xl font-bold text-sk-primary mb-3">{step.number}</div>
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+    {/* 👇 Horizontal scroll with hidden scrollbar */}
+    <div className="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide">
+      {processSteps.map((step, index) => (
+        <ScrollReveal key={step.number} delay={index * 150}>
+          <div className="min-w-[260px] bg-white p-8 rounded-lg shadow-md border-t-4 border-sk-primary h-full">
+            <div className="text-3xl font-bold text-sk-primary mb-3">{step.number}</div>
+            <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+            <p className="text-gray-600">{step.description}</p>
           </div>
-        </div>
-      </section>
+        </ScrollReveal>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Pricing Section */}
       <section className="py-16 bg-white">
