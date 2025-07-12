@@ -1,0 +1,387 @@
+/* HomePage.css */
+
+/* --- General Styles & Variables --- */
+:root {
+    --sk-primary: #5A67D8; /* A vibrant blue/purple */
+    --sk-secondary: #66C7B6; /* A refreshing teal/green */
+    --sk-dark-text: #2D3748;
+    --sk-light-text: #4A5568;
+    --sk-background-light: #F7FAFC;
+    --sk-background-medium: #EDF2F7;
+    --sk-accent-light: rgba(90, 103, 216, 0.1); /* Primary with transparency */
+    --sk-accent-dark: rgba(102, 199, 182, 0.1); /* Secondary with transparency */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Or 'Outfit', 'Montserrat' for a modern feel */
+    color: var(--sk-dark-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-heading {
+    font-size: 2.5rem; /* ~40px */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: var(--sk-dark-text);
+}
+
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sk-primary), var(--sk-secondary));
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    padding: 10rem 0 8rem; /* Increased padding for more space */
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--sk-background-light) 0%, var(--sk-background-medium) 100%);
+}
+
+.hero-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, var(--sk-accent-light) 0%, transparent 50%),
+                radial-gradient(circle at bottom right, var(--sk-accent-dark) 0%, transparent 50%);
+    opacity: 0.6;
+    animation: gradientFlow 15s ease-in-out infinite alternate;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 0%, 100% 100%; }
+    100% { background-position: 100% 100%, 0% 0%; }
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1.2fr 0.8fr; /* Adjust column ratio */
+    }
+}
+
+.hero-heading {
+    font-size: 3.5rem; /* ~56px */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--sk-dark-text);
+}
+
+.hero-heading span {
+    color: var(--sk-primary);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-subtext {
+    font-size: 1.3rem; /* ~20px */
+    color: var(--sk-light-text);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cta-button-primary,
+.cta-button-secondary {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    font-weight: 600;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cta-button-primary {
+    background-color: var(--sk-primary);
+    color: white;
+    border: 2px solid var(--sk-primary);
+}
+
+.cta-button-primary:hover {
+    background-color: var(--sk-secondary);
+    border-color: var(--sk-secondary);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button-secondary {
+    background-color: transparent;
+    color: var(--sk-primary);
+    border: 2px solid var(--sk-primary);
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--sk-primary);
+    color: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.hero-image-container {
+    position: relative;
+    padding: 1.5rem; /* Padding for the glow effect */
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background for card effect */
+    border-radius: 1.5rem; /* More rounded corners */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: pulseGlow 4s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(90, 103, 216, 0.3); }
+    50% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 25px rgba(102, 199, 182, 0.5); }
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers the area */
+    border-radius: 1rem; /* Slightly less rounded than container */
+    display: block;
+}
+
+/* --- Services Section --- */
+.services-section {
+    background-color: white;
+    padding: 6rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* --- ServiceCard Specific Styles (assuming ServiceCard is a separate component) --- */
+.service-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid transparent; /* Placeholder for hover effect */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* Ensure cards are same height */
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-top-color: var(--sk-primary); /* Highlight on hover */
+}
+
+.service-card-icon-wrapper {
+    background: linear-gradient(45deg, var(--sk-primary), var(--sk-secondary));
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: white; /* Icon color */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-card-icon svg {
+    width: 36px; /* Adjust SVG size */
+    height: 36px;
+    stroke-width: 2; /* Adjust stroke thickness */
+}
+
+.service-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sk-dark-text);
+    margin-bottom: 0.5rem;
+}
+
+/* --- Why Choose Us Section --- */
+.benefits-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--sk-background-medium) 0%, var(--sk-background-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefits-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: var(--sk-primary);
+    opacity: 0.05;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.benefits-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background-color: var(--sk-secondary);
+    opacity: 0.05;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--sk-primary); /* Stronger left border */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out content */
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    border-left-color: var(--sk-secondary); /* Change color on hover */
+}
+
+.benefit-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--sk-dark-text);
+    margin-bottom: 0.75rem;
+}
+
+.benefit-card p {
+    color: var(--sk-light-text);
+    line-height: 1.6;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+    padding: 6rem 0;
+    background: linear-gradient(90deg, var(--sk-primary), var(--sk-secondary));
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="rgba(255,255,255,0.05)"><polygon points="0,0 50,0 0,50" /><polygon points="100,0 100,50 50,100 0,100" /></svg>') repeat;
+    background-size: 20px 20px;
+    opacity: 0.2;
+    animation: patternMove 60s linear infinite;
+}
+
+@keyframes patternMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+
+.cta-section h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section .cta-button-white {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: white;
+    color: var(--sk-primary);
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section .cta-button-white:hover {
+    background-color: var(--sk-dark-text); /* Darker on hover for contrast */
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+    .hero-subtext {
+        font-size: 1.1rem;
+    }
+    .section-heading {
+        font-size: 2rem;
+    }
+    .service-card-title {
+        font-size: 1.3rem;
+    }
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+}

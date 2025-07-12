@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import HomePage from "./pages/Home";
+import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/About";
 import ServicesPage from "./pages/Services";
 import TeamPage from "./pages/Team";
