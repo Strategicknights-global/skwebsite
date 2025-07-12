@@ -385,3 +385,36 @@ body {
         font-size: 2rem;
     }
 }
+
+/* HomePage.css (Existing styles remain) */
+
+/* ... other CSS rules ... */
+
+.service-card-title {
+    font-size: 1.5rem;
+    font-weight: 700; /* Default bold weight */
+    color: var(--sk-dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.service-card-title.light {
+    font-weight: 400; /* Or 300 for even lighter */
+}
+
+/* ... rest of your CSS ... */
+
+.service-card-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 8px; /* Adjust rounding as needed */
+    background-color: var(--sk-accent-light); /* Light background */
+    margin: 0 auto 1rem; /* Center and add bottom margin */
+}
+
+.service-card-icon-wrapper svg {
+    width: 32px; /* Adjust icon size within the wrapper */
+    height: 32px;
+}
