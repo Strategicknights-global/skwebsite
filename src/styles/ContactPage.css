@@ -1,0 +1,161 @@
+/* ContactPage.css - New Graphical Redesign */
+
+:root {
+    --sk-primary: #4f46e5;
+    --sk-secondary: #10b981;
+    --sk-dark-text: #111827;
+    --sk-light-text: #4b5563;
+    --sk-background-light: #f9fafb;
+    --sk-border-light: #e5e7eb;
+    --sk-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --sk-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* --- Hero Section --- */
+.contact-hero {
+    padding: 7rem 0 20rem; /* Increased bottom padding to make space for the overlapping card */
+    background: linear-gradient(120deg, #fdfdfd 0%, #f0f2f5 100%);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+.contact-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--sk-dark-text);
+}
+.contact-hero p {
+    font-size: 1.25rem;
+    color: var(--sk-light-text);
+    margin-top: 1rem;
+}
+
+
+/* --- Main Contact Section --- */
+.contact-hub-section {
+    position: relative;
+    margin-top: -15rem; /* This pulls the section up to overlap the hero */
+    z-index: 10;
+    padding-bottom: 5rem;
+}
+.contact-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: var(--sk-shadow-xl);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 1024px) {
+    .contact-card {
+        grid-template-columns: 2fr 1fr; /* Form takes more space */
+    }
+}
+
+/* --- Form Container (Left Side) --- */
+.form-container {
+    padding: 3rem;
+}
+.form-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--sk-dark-text);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Info Panel (Right Side) --- */
+.info-panel {
+    background-color: var(--sk-primary);
+    color: white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.info-panel h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.info-item .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+.info-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.info-item p, .info-item a {
+    opacity: 0.9;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+.info-item a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Social Icons in Info Panel */
+.social-connect {
+    margin-top: auto; /* Pushes to the bottom */
+}
+.social-icons-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transition: all 0.3s ease;
+}
+.social-icon:hover {
+    background: white;
+    color: var(--sk-primary);
+    transform: scale(1.1);
+}
+.social-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Map Section */
+.map-section {
+    background-color: var(--sk-background-light);
+    padding: 5rem 0;
+}
+.map-section h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--sk-dark-text);
+    margin-bottom: 2rem;
+}
+.map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--sk-shadow-lg);
+    height: 450px;
+    border: 1px solid var(--sk-border-light);
+}
+.map-container iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+}

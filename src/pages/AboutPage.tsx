@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '@/components/ScrollReveal';
 import Ksglobals from '@/Image/Ksglobals.png';
+import '../styles/AboutPage.css'
 
 const AboutPage = () => {
   useEffect(() => {

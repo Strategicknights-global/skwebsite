@@ -1,0 +1,231 @@
+/* AboutPage.css - Synced with HomePage.css styles */
+/* --- Root variables from HomePage for consistency --- */
+:root {
+--sk-primary: #4f46e5;
+--sk-secondary: #10b981;
+--sk-dark-text: #111827;
+--sk-light-text: #4b5563;
+--sk-background-light: #f9fafb;
+--sk-border-light: #e5e7eb;
+--sk-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+--sk-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+/* --- Reusable Section Heading (from Homepage) --- */
+.section-heading {
+font-size: 2.75rem;
+font-weight: 800;
+text-align: center;
+margin-bottom: 1rem;
+color: var(--sk-dark-text);
+}
+.section-heading + p {
+font-size: 1.125rem;
+color: var(--sk-light-text);
+text-align: center;
+max-width: 40rem;
+margin-left: auto;
+margin-right: auto;
+}
+/* --- About Page Specific Sections --- */
+/* Hero Section (Matches Homepage Hero) */
+.about-hero {
+padding: 8rem 0 6rem;
+background: linear-gradient(120deg, #fdfdfd 0%, #f0f2f5 100%);
+}
+.about-hero h1 {
+font-size: 3.5rem;
+font-weight: 800;
+color: var(--sk-dark-text);
+margin-bottom: 1.5rem;
+}
+.about-hero p {
+font-size: 1.25rem;
+color: var(--sk-light-text);
+}
+/* Vision & Mission Section /
+.vision-mission-section {
+padding: 5rem 0;
+background-color: white; / Matches .homepage-benefits-section bg */
+.vision-mission-section .grid { align-items: center; }
+.vision-mission-section h2 {
+font-size: 2.25rem;
+font-weight: 700;
+color: var(--sk-dark-text);
+margin-bottom: 1rem;
+}
+.vision-mission-section p {
+color: var(--sk-light-text);
+margin-bottom: 2.5rem;
+line-height: 1.7;
+}
+.vision-mission-section img {
+border-radius: 0.75rem;
+box-shadow: var(--sk-shadow-lg);
+}
+/* Foundation Section (Styled like .homepage-services-section) /
+.foundation-section {
+padding: 5rem 0;
+background-color: var(--sk-background-light);
+}
+.foundation-card {
+background: white;
+border-radius: 0.75rem;
+padding: 2rem 1.5rem;
+text-align: left;
+border: 1px solid var(--sk-border-light);
+box-shadow: var(--sk-shadow-md);
+position: relative;
+overflow: hidden;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+height: 100%;
+}
+.foundation-card:before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 4px;
+background: linear-gradient(90deg, var(--sk-primary), var(--sk-secondary));
+opacity: 0;
+transform: scaleX(0);
+transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.foundation-card:hover {
+transform: translateY(-8px);
+box-shadow: var(--sk-shadow-lg);
+}
+.foundation-card:hover:before {
+opacity: 1;
+transform: scaleX(1);
+}
+.foundation-card h3 {
+font-weight: 700;
+color: var(--sk-primary);
+margin-bottom: 0.75rem;
+}
+.foundation-card li svg {
+color: var(--sk-secondary); / Using the green from the gradient */
+
+/* Quality Assurance Section */
+.quality-assurance-section {
+padding: 5rem 0;
+background-color: white;
+}
+.quality-assurance-section .grid { align-items: center; }
+.quality-assurance-section h2 {
+font-size: 2.25rem;
+font-weight: 700;
+color: var(--sk-dark-text);
+margin-bottom: 1.5rem;
+}
+.quality-assurance-section .feature-list li svg {
+color: var(--sk-secondary);
+}
+.quality-assurance-section img {
+border-radius: 0.75rem;
+box-shadow: var(--sk-shadow-lg);
+}
+/* Partnerships Section */
+.partnerships-section {
+padding: 5rem 0;
+background-color: var(--sk-background-light);
+}
+.partner-card {
+background-color: white;
+padding: 2rem;
+border-radius: 0.75rem;
+border: 1px solid var(--sk-border-light);
+box-shadow: var(--sk-shadow-md);
+transition: all 0.3s ease;
+}
+.partner-card:hover {
+transform: translateY(-8px);
+box-shadow: var(--sk-shadow-lg);
+}
+.partner-card img, .partner-card .button-text {
+height: 2.5rem;
+object-fit: contain;
+}
+.partner-card .button-text {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--sk-primary);
+}
+/* Stats Section */
+.stats-section {
+padding: 5rem 0;
+background-color: white;
+}
+.stat-card {
+text-align: center;
+padding: 2rem;
+background-color: var(--sk-background-light);
+border-radius: 0.75rem;
+border-top: 4px solid var(--sk-primary);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover {
+transform: translateY(-8px);
+box-shadow: var(--sk-shadow-lg);
+}
+.stat-card .text-4xl {
+font-size: 3rem;
+font-weight: 800;
+color: var(--sk-primary);
+}
+.stat-card .text-gray-600 {
+font-size: 1.125rem;
+color: var(--sk-light-text);
+}
+/* CTA Section (Mirrors homepage CTA exactly) */
+.about-cta-section {
+padding: 5rem 0;
+background: linear-gradient(135deg, var(--sk-primary), #312e81);
+position: relative;
+color: white;
+}
+.about-cta-section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.3), transparent 40%),
+radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.1), transparent 40%);
+opacity: 0.5;
+}
+.about-cta-section .container {
+position: relative;
+z-index: 2;
+}
+.about-cta-section h2 {
+color: white;
+font-weight: 800;
+}
+.about-cta-section p {
+color: rgba(255,255,255,0.9);
+}
+.about-cta-section .cta-button {
+display: inline-block;
+padding: 0.8rem 2.2rem;
+border-radius: 9999px;
+background-color: white;
+color: var(--sk-primary);
+font-weight: 700;
+text-decoration: none;
+box-shadow: var(--sk-shadow-lg);
+transition: all 0.3s ease;
+}
+.about-cta-section .cta-button:hover {
+background-color: var(--sk-secondary);
+color: white;
+transform: scale(1.05);
+}
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+.about-hero-section h1 { font-size: 2.5rem; }
+.vision-mission-section h2, .quality-assurance-section h2 { font-size: 1.75rem; }
+.section-heading { font-size: 2.25rem; }
+}

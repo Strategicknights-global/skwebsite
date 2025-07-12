@@ -1,0 +1,103 @@
+/* Footer.css */
+
+/* --- Main Footer Container --- */
+.site-footer {
+  background-color: #111827; /* A deep, near-black for a professional look */
+  color: #d1d5db; /* Light grey for readability */
+  padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    /* Adjust grid to 2fr for company info, 1fr for the rest */
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+/* --- Footer Column Styling --- */
+.footer-column h3 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.footer-column p,
+.footer-column address {
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* --- Link Styling --- */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #facc15; /* Brand Yellow */
+  transform: translateX(4px);
+}
+
+/* --- Social Media Icons --- */
+.social-links {
+  display: flex;
+  gap: 0.75rem; /* 12px */
+  margin-top: 1rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem; /* 36px */
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: #374151; /* A neutral dark grey */
+  color: #d1d5db;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #facc15; /* Brand Yellow */
+  color: #111827;
+  transform: scale(1.1);
+}
+
+.social-icon svg {
+  width: 1rem; /* 16px */
+  height: 1rem;
+}
+
+
+/* --- Bottom Copyright Section --- */
+.footer-bottom {
+  border-top: 1px solid #374151;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #9ca3af;
+}

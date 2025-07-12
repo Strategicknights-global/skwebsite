@@ -1,399 +1,196 @@
-/* HomePage.css */
+/* HomePage.css - Graphical Redesign WITHOUT the purple blob */
 
-/* --- General Styles & Variables --- */
 :root {
-    --sk-primary: #5A67D8; /* A vibrant blue/purple */
-    --sk-secondary: #66C7B6; /* A refreshing teal/green */
-    --sk-dark-text: #2D3748;
-    --sk-light-text: #4A5568;
-    --sk-background-light: #F7FAFC;
-    --sk-background-medium: #EDF2F7;
-    --sk-accent-light: rgba(90, 103, 216, 0.1); /* Primary with transparency */
-    --sk-accent-dark: rgba(102, 199, 182, 0.1); /* Secondary with transparency */
-    --sk-border-light: #e2e8f0; /* A very light gray for subtle borders */
-    --sk-shadow-light: rgba(0, 0, 0, 0.04);
-    --sk-shadow-medium: rgba(0, 0, 0, 0.08);
-    --sk-shadow-strong: rgba(0, 0, 0, 0.12);
+    /* Original brand colors */
+    --sk-primary: #4f46e5;
+    --sk-secondary: #10b981;
+    --sk-dark-text: #111827;
+    --sk-light-text: #4b5563;
+    --sk-background-light: #f9fafb;
+    --sk-border-light: #e5e7eb;
+    --sk-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --sk-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    /* New variables for the hero theme */
+    --brand-background: linear-gradient(135deg, #f0f4ff 0%, #e6e6fa 100%);
+    --brand-accent-purple: #6D28D9;
 }
 
 body {
-    font-family: 'Inter', sans-serif; /* Or 'Outfit', 'Montserrat' for a modern feel */
+    font-family: 'Inter', sans-serif;
     color: var(--sk-dark-text);
+    background-color: white;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.section-heading {
-    font-size: 2.5rem; /* ~40px */
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 1.5rem;
+/* --- Redesigned Hero Section --- */
+.homepage-hero-section {
+    background: var(--brand-background);
+    padding: 8rem 0;
     position: relative;
-    padding-bottom: 0.5rem;
-    color: var(--sk-dark-text);
-}
-
-.section-heading::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--sk-primary), var(--sk-secondary));
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
-}
-
-/* --- Hero Section --- */
-.hero-section {
-    position: relative;
-    padding: 10rem 0 8rem; /* Increased padding for more space */
     overflow: hidden;
-    background: linear-gradient(135deg, var(--sk-background-light) 0%, var(--sk-background-medium) 100%);
 }
 
-.hero-gradient-overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top left, var(--sk-accent-light) 0%, transparent 50%),
-                radial-gradient(circle at bottom right, var(--sk-accent-dark) 0%, transparent 50%);
-    opacity: 0.6;
-    animation: gradientFlow 15s ease-in-out infinite alternate;
-}
-
-@keyframes gradientFlow {
-    0% { background-position: 0% 0%, 100% 100%; }
-    100% { background-position: 100% 100%, 0% 0%; }
-}
-
-.hero-content {
+.hero-content-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
     align-items: center;
+    gap: 4rem;
     position: relative;
-    z-index: 10;
+    z-index: 5;
 }
-
 @media (min-width: 1024px) {
-    .hero-content {
-        grid-template-columns: 1.2fr 0.8fr; /* Adjust column ratio */
+    .hero-content-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     }
 }
 
-.hero-heading {
-    font-size: 3.5rem; /* ~56px */
+/* Left side: Text Content */
+.hero-text-content h1 {
+    font-size: 4rem;
     font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    color: var(--sk-dark-text);
+    line-height: 1.15;
+}
+.hero-text-content .gradient-text {
+    background: linear-gradient(90deg, var(--brand-accent-purple), var(--sk-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero-text-content p {
+    font-size: 1.125rem;
+    color: var(--sk-light-text);
+    margin-top: 1.5rem;
+    line-height: 1.7;
+    max-width: 36rem;
+}
+.hero-cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--brand-accent-purple);
+    color: white;
+    font-weight: 600;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(109, 40, 217, 0.3);
+}
+.hero-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(109, 40, 217, 0.4);
+}
+.hero-cta-secondary {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--sk-light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.hero-cta-secondary:hover {
     color: var(--sk-dark-text);
 }
 
-.hero-heading span {
-    color: var(--sk-primary);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-.hero-subtext {
-    font-size: 1.3rem; /* ~20px */
-    color: var(--sk-light-text);
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-.hero-cta-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.cta-button-primary,
-.cta-button-secondary {
-    display: inline-block;
-    padding: 0.9rem 2.2rem;
-    font-weight: 600;
-    border-radius: 50px; /* Pill shape */
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.cta-button-primary {
-    background-color: var(--sk-primary);
-    color: white;
-    border: 2px solid var(--sk-primary);
-}
-
-.cta-button-primary:hover {
-    background-color: var(--sk-secondary);
-    border-color: var(--sk-secondary);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-.cta-button-secondary {
-    background-color: transparent;
-    color: var(--sk-primary);
-    border: 2px solid var(--sk-primary);
-}
-
-.cta-button-secondary:hover {
-    background-color: var(--sk-primary);
-    color: white;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-.hero-image-container {
+/* Right side: Graphics Container */
+.hero-graphics-container {
     position: relative;
-    padding: 1.5rem; /* Padding for the glow effect */
-    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background for card effect */
-    border-radius: 1.5rem; /* More rounded corners */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px); /* Frosted glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    animation: pulseGlow 4s infinite ease-in-out;
-}
-
-@keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(90, 103, 216, 0.3); }
-    50% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 25px rgba(102, 199, 182, 0.5); }
-}
-
-.hero-image {
-    width: 100%;
-    height: 400px; /* Fixed height for consistency */
-    object-fit: cover; /* Ensures image covers the area */
-    border-radius: 1rem; /* Slightly less rounded than container */
-    display: block;
-}
-
-/* --- Services Section --- */
-.services-section {
-    background-color: white;
-    padding: 6rem 0;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-/* --- ServiceCard Specific Styles --- */
-.service-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid transparent; /* Placeholder for hover effect */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%; /* Ensure cards are same height */
-}
-
-.service-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    border-top-color: var(--sk-primary); /* Highlight on hover */
-}
-
-.service-card-icon-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 12px; /* Adjusted from 8px to 12px for softer corners */
-    background-color: var(--sk-accent-light); /* Light background */
-    margin: 0 auto 1rem; /* Center and add bottom margin */
+    min-height: 450px;
+}
+.hero-main-image {
+    position: relative;
+    max-width: 100%;
+    z-index: 10;
+    border-radius: 1rem; /* Added border-radius for a softer look on the image itself */
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
 }
 
-.service-card-icon-wrapper svg {
-    width: 32px; /* Adjust icon size within the wrapper */
-    height: 32px;
-}
+/* --- THE PURPLE BLOB STYLE HAS BEEN REMOVED --- */
 
-.service-card-title {
-    font-size: 1.5rem;
-    font-weight: 700; /* Default bold weight */
+
+/* --- Shared Section Heading Style --- */
+.section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
     color: var(--sk-dark-text);
-    margin-bottom: 0.5rem;
 }
 
-.service-card-title.light {
-    font-weight: 400; /* Applied for lighter titles */
+/* --- Services Section --- */
+.homepage-services-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+.service-card {
+    background: var(--sk-background-light);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--sk-border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sk-shadow-lg);
+}
+.service-card svg {
+    color: var(--sk-primary);
+    margin: 0 auto 1rem;
 }
 
 /* --- Why Choose Us Section --- */
-.benefits-section {
-    padding: 6rem 0;
-    background: var(--sk-background-light); /* Lighter, cleaner background */
-    position: relative;
-    overflow: hidden;
+.homepage-benefits-section {
+    padding: 5rem 0;
+    background-color: var(--sk-background-light);
 }
-
-.benefits-section::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 200px;
-    height: 200px;
-    background-color: var(--sk-primary);
-    opacity: 0.03; /* More subtle */
-    border-radius: 50%;
-    filter: blur(100px); /* More blur */
-    z-index: 0;
-}
-
-.benefits-section::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 250px;
-    height: 250px;
-    background-color: var(--sk-secondary);
-    opacity: 0.03; /* More subtle */
-    border-radius: 50%;
-    filter: blur(100px); /* More blur */
-    z-index: 0;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem; /* Slightly reduced gap for a tighter grid */
-    position: relative; /* Ensure cards are above pseudo-elements */
-    z-index: 1;
-}
-
 .benefit-card {
-    background-color: white;
-    padding: 1.75rem 2rem; /* Adjusted padding for better spacing */
-    border-radius: 0.75rem; /* Slightly less rounded for crispness */
-    box-shadow: 0 4px 10px var(--sk-shadow-light); /* Softer default shadow */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
-    border: 1px solid var(--sk-border-light); /* Subtle border matching the image */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content to top */
-    height: auto; /* Let content define height, or use min-height if needed */
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--sk-border-light);
+    border-left: 4px solid var(--sk-primary);
+    height: 100%;
 }
-
-.benefit-card:hover {
-    transform: translateY(-5px); /* Lift effect */
-    box-shadow: 0 10px 25px var(--sk-shadow-medium); /* More pronounced shadow on hover */
-    border-color: var(--sk-primary); /* Highlight on hover */
-}
-
 .benefit-card h3 {
-    font-size: 1.25rem; /* Slightly smaller, cleaner title */
-    font-weight: 600; /* Lighter font weight for titles */
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--sk-dark-text);
-    margin-bottom: 0.5rem; /* Reduced margin */
-    line-height: 1.4;
 }
-
 .benefit-card p {
-    font-size: 0.95rem; /* Slightly smaller body text */
     color: var(--sk-light-text);
-    line-height: 1.6;
 }
 
 /* --- CTA Section --- */
-.cta-section {
-    padding: 6rem 0;
-    background: linear-gradient(90deg, var(--sk-primary), var(--sk-secondary));
-    color: white;
+.homepage-cta-section {
+    padding: 5rem 0;
+    background: var(--sk-primary);
     text-align: center;
-    position: relative;
-    overflow: hidden;
 }
-
-.cta-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="rgba(255,255,255,0.05)"><polygon points="0,0 50,0 0,50" /><polygon points="100,0 100,50 50,100 0,100" /></svg>') repeat;
-    background-size: 20px 20px;
-    opacity: 0.2;
-    animation: patternMove 60s linear infinite;
+.homepage-cta-section h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
 }
-
-@keyframes patternMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
+.homepage-cta-section p {
+    font-size: 1.125rem;
+    opacity: 0.9;
 }
-
-.cta-section h2 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-.cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-    position: relative;
-    z-index: 1;
-}
-
-.cta-section .cta-button-white {
+.homepage-cta-section .cta-button-animated {
     display: inline-block;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2.2rem;
     background-color: white;
     color: var(--sk-primary);
     font-weight: 700;
-    border-radius: 50px;
+    border-radius: 9999px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 1;
 }
-
-.cta-section .cta-button-white:hover {
-    background-color: var(--sk-dark-text); /* Darker on hover for contrast */
+.homepage-cta-section .cta-button-animated:hover {
+    background-color: var(--sk-secondary);
     color: white;
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    transform: scale(1.05);
 }
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    .hero-heading {
-        font-size: 2.5rem;
-    }
-    .hero-subtext {
-        font-size: 1.1rem;
-    }
-    .section-heading {
-        font-size: 2rem;
-    }
-    .service-card-title {
-        font-size: 1.3rem;
-    }
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-    .benefits-grid {
-        grid-template-columns: 1fr; /* Stack cards on small screens */
-    }
+    .hero-text-content h1 { font-size: 3rem; }
 }

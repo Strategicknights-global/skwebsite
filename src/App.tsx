@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/About";
+import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/Services";
 import TeamPage from "./pages/Team";
 import ContactPage from "./pages/Contact";
