@@ -10,6 +10,10 @@
     --sk-background-medium: #EDF2F7;
     --sk-accent-light: rgba(90, 103, 216, 0.1); /* Primary with transparency */
     --sk-accent-dark: rgba(102, 199, 182, 0.1); /* Secondary with transparency */
+    --sk-border-light: #e2e8f0; /* A very light gray for subtle borders */
+    --sk-shadow-light: rgba(0, 0, 0, 0.04);
+    --sk-shadow-medium: rgba(0, 0, 0, 0.08);
+    --sk-shadow-strong: rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -179,7 +183,7 @@ body {
     gap: 2rem;
 }
 
-/* --- ServiceCard Specific Styles (assuming ServiceCard is a separate component) --- */
+/* --- ServiceCard Specific Styles --- */
 .service-card {
     background-color: white;
     padding: 2rem;
@@ -201,35 +205,36 @@ body {
 }
 
 .service-card-icon-wrapper {
-    background: linear-gradient(45deg, var(--sk-primary), var(--sk-secondary));
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
-    color: white; /* Icon color */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px; /* Adjusted from 8px to 12px for softer corners */
+    background-color: var(--sk-accent-light); /* Light background */
+    margin: 0 auto 1rem; /* Center and add bottom margin */
 }
 
-.service-card-icon svg {
-    width: 36px; /* Adjust SVG size */
-    height: 36px;
-    stroke-width: 2; /* Adjust stroke thickness */
+.service-card-icon-wrapper svg {
+    width: 32px; /* Adjust icon size within the wrapper */
+    height: 32px;
 }
 
 .service-card-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 700; /* Default bold weight */
     color: var(--sk-dark-text);
     margin-bottom: 0.5rem;
+}
+
+.service-card-title.light {
+    font-weight: 400; /* Applied for lighter titles */
 }
 
 /* --- Why Choose Us Section --- */
 .benefits-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, var(--sk-background-medium) 0%, var(--sk-background-light) 100%);
+    background: var(--sk-background-light); /* Lighter, cleaner background */
     position: relative;
     overflow: hidden;
 }
@@ -242,9 +247,10 @@ body {
     width: 200px;
     height: 200px;
     background-color: var(--sk-primary);
-    opacity: 0.05;
+    opacity: 0.03; /* More subtle */
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(100px); /* More blur */
+    z-index: 0;
 }
 
 .benefits-section::after {
@@ -255,45 +261,49 @@ body {
     width: 250px;
     height: 250px;
     background-color: var(--sk-secondary);
-    opacity: 0.05;
+    opacity: 0.03; /* More subtle */
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(100px); /* More blur */
+    z-index: 0;
 }
-
 
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem; /* Slightly reduced gap for a tighter grid */
+    position: relative; /* Ensure cards are above pseudo-elements */
+    z-index: 1;
 }
 
 .benefit-card {
     background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid var(--sk-primary); /* Stronger left border */
+    padding: 1.75rem 2rem; /* Adjusted padding for better spacing */
+    border-radius: 0.75rem; /* Slightly less rounded for crispness */
+    box-shadow: 0 4px 10px var(--sk-shadow-light); /* Softer default shadow */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border: 1px solid var(--sk-border-light); /* Subtle border matching the image */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space out content */
-    height: 100%;
+    justify-content: flex-start; /* Align content to top */
+    height: auto; /* Let content define height, or use min-height if needed */
 }
 
 .benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-    border-left-color: var(--sk-secondary); /* Change color on hover */
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 10px 25px var(--sk-shadow-medium); /* More pronounced shadow on hover */
+    border-color: var(--sk-primary); /* Highlight on hover */
 }
 
 .benefit-card h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.25rem; /* Slightly smaller, cleaner title */
+    font-weight: 600; /* Lighter font weight for titles */
     color: var(--sk-dark-text);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem; /* Reduced margin */
+    line-height: 1.4;
 }
 
 .benefit-card p {
+    font-size: 0.95rem; /* Slightly smaller body text */
     color: var(--sk-light-text);
     line-height: 1.6;
 }
@@ -325,7 +335,6 @@ body {
     0% { background-position: 0 0; }
     100% { background-position: 100px 100px; }
 }
-
 
 .cta-section h2 {
     font-size: 2.8rem;
@@ -384,37 +393,7 @@ body {
     .cta-section h2 {
         font-size: 2rem;
     }
-}
-
-/* HomePage.css (Existing styles remain) */
-
-/* ... other CSS rules ... */
-
-.service-card-title {
-    font-size: 1.5rem;
-    font-weight: 700; /* Default bold weight */
-    color: var(--sk-dark-text);
-    margin-bottom: 0.5rem;
-}
-
-.service-card-title.light {
-    font-weight: 400; /* Or 300 for even lighter */
-}
-
-/* ... rest of your CSS ... */
-
-.service-card-icon-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px; /* Adjust size as needed */
-    height: 60px; /* Adjust size as needed */
-    border-radius: 8px; /* Adjust rounding as needed */
-    background-color: var(--sk-accent-light); /* Light background */
-    margin: 0 auto 1rem; /* Center and add bottom margin */
-}
-
-.service-card-icon-wrapper svg {
-    width: 32px; /* Adjust icon size within the wrapper */
-    height: 32px;
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Stack cards on small screens */
+    }
 }
