@@ -39,7 +39,7 @@ const Navbar = () => {
             <Link to="/" className={isActive('/') ? 'active' : ''}>Home</Link>
             <Link to="/about" className={isActive('/about') ? 'active' : ''}>About</Link>
             <Link to="/services" className={isActive('/services') ? 'active' : ''}>Services</Link>
-            <Link to="/portfolio" className={isActive('/portfolio') ? 'active' : ''}>Portfolio</Link>
+            <Link to="/team" className={isActive('/team') ? 'active' : ''}>Team</Link>
             <Link to="/contact" className={isActive('/contact') ? 'active' : ''}>Contact</Link>
           </nav>
 
@@ -58,7 +58,7 @@ const Navbar = () => {
           <Link to="/" className={isActive('/') ? 'active' : ''}>Home</Link>
           <Link to="/about" className={isActive('/about') ? 'active' : ''}>About</Link>
           <Link to="/services" className={isActive('/services') ? 'active' : ''}>Services</Link>
-          <Link to="/portfolio" className={isActive('/portfolio') ? 'active' : ''}>Portfolio</Link>
+          <Link to="/team" className={isActive('/team') ? 'active' : ''}>Team</Link>
           <Link to="/contact" className={isActive('/contact') ? 'active' : ''}>Contact</Link>
         </nav>
       </div>
