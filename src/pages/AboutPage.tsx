@@ -1,15 +1,15 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ScrollReveal from '@/components/ScrollReveal';
-import Ksglobals from '@/Image/Ksglobals.png';
-import '../styles/AboutPage.css'
+import ScrollReveal from '@/components/ScrollReveal'; // Assuming this is your custom animation component
+import Ksglobals from '@/Image/Ksglobals.png'; // Make sure the path to your image is correct
+import '../styles/AboutPage.css';
 
 const AboutPage = () => {
   useEffect(() => {
     document.title = "About Us | Strategic Knights";
   }, []);
 
+  // Updated foundation data with icons
   const foundations = [
     {
       title: "Values",
@@ -19,7 +19,12 @@ const AboutPage = () => {
         "Innovation & Creativity",
         "Excellence & Quality",
         "Client-Centric Approach"
-      ]
+      ],
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" />
+        </svg>
+      )
     },
     {
       title: "Goals",
@@ -29,234 +34,230 @@ const AboutPage = () => {
         "Client Success Stories",
         "Innovation Pipeline",
         "Global Expansion"
-      ]
+      ],
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
+        </svg>
+      )
     }
   ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-sk-blue/30 via-white to-sk-gray/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 animate-fade-in">About Strategic Knights</h1>
-            <p className="text-xl text-gray-700 mb-8 animate-fade-in">
-              We're on a mission to transform businesses through innovative digital marketing solutions and cutting-edge strategies.
+    <div className="about-page">
+      {/* --- Hero Section --- */}
+      <section className="about-hero">
+        <div className="hero-overlay"></div>
+        <div className="container hero-content">
+          <ScrollReveal>
+            <h1 className="hero-title">Forging Digital Dominance</h1>
+            <p className="hero-subtitle">
+              We are Strategic Knights—a collective of innovators and strategists dedicated to transforming businesses in the digital realm.
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
-
-      {/* Our Vision & Mission */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <ScrollReveal>
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Vision</h2>
-                <p className="text-gray-700 mb-6">
-                  To be the global leader in digital innovation, transforming businesses through cutting-edge marketing solutions and setting new standards of excellence in the digital realm.
-                </p>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Mission</h2>
-                <p className="text-gray-700">
-                  To empower businesses with innovative digital solutions that drive growth, enhance brand value, and create lasting impact in an ever-evolving digital landscape.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <img 
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
-                alt="Team Meeting" 
-                className="rounded-lg shadow-lg w-full"
-              />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-     {/* Our Foundation */}
-<section className="py-16 bg-gray-50">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <ScrollReveal>
-      <h2 className="section-heading text-center">Our Foundation</h2>
-      <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-        The pillars that drive our success and innovation
-      </p>
-    </ScrollReveal>
-
-    <div className="flex flex-wrap justify-center gap-8">
-      {foundations.map((item, index) => (
-        <ScrollReveal key={item.title} delay={index * 100}>
-          <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-sk-primary w-full max-w-xs flex flex-col text-left">
-            <h3 className="text-xl font-bold mb-3 text-sk-primary">{item.title}</h3>
-            <p className="text-gray-600 mb-4">{item.description}</p>
-            <ul className="space-y-2">
-              {item.items.map((bullet, i) => (
-                <li key={i} className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-sk-green" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+      
+      {/* --- Mission/Vision Section --- */}
+      <section className="py-20 bg-white">
+        <div className="container grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          {/* Text Content Column */}
+          <ScrollReveal>
+            <div className="space-y-12">
+              <div className="flex items-start gap-5">
+                <div className="icon-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <span className="text-gray-700">{bullet}</span>
-                </li>
-              ))}
-            </ul>
+                </div>
+                <div className="flex-1">
+                  <h3 className="vm-label">Mission</h3>
+                  <p className="section-text mt-3">
+                    To empower businesses with transformative digital solutions that drive growth, enhance brand value, and create a lasting impact.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-5">
+                <div className="icon-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="vm-label">Vision</h3>
+                  <p className="section-text mt-3">
+                    To be the world's most trusted partner in digital innovation, setting new standards of excellence and leading our clients to unparalleled success.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Image Column */}
+          <ScrollReveal delay={200}>
+            <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
+              alt="Team collaborating"
+              className="rounded-lg shadow-2xl object-cover w-full h-full"
+            />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* --- Our Foundation Section (NEW DESIGN) --- */}
+      <section className="foundation-section">
+        <div className="wave-top">
+          <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 60.9832C0 60.9832 359.5 120.358 720 60.9832C1080.5 1.60815 1440 60.9832 1440 60.9832V100.165H0V60.9832Z" fill="#f7fafc"/>
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <h2 className="section-title text-center">Our Foundation</h2>
+            <p className="section-text text-center mb-16 max-w-3xl mx-auto">
+              These are the pillars of our identity, guiding our actions, shaping our culture, and driving our success.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {foundations.map((item, index) => (
+              <ScrollReveal key={item.title} delay={index * 150}>
+                <div className="foundation-card">
+                  <div className="foundation-card-inner">
+                    <div className="foundation-card-icon">{item.icon}</div>
+                    <h3 className="foundation-card-title">{item.title}</h3>
+                    <p className="foundation-card-description">{item.description}</p>
+                    <ul className="mt-6 space-y-4">
+                      {item.items.map((bullet, i) => (
+                        <li key={i} className="flex items-center">
+                          <svg className="w-5 h-5 mr-3 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-gray-700">{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
-        </ScrollReveal>
-      ))}
+        </div>
+      </section>
+
+      {/* --- Quality Assurance Section --- */}
+<section className="py-20 bg-white">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Image Column */}
+      <ScrollReveal delay={200}>
+        <img
+          src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+          alt="Team collaborating on quality assurance"
+          className="rounded-lg shadow-lg w-full"
+        />
+      </ScrollReveal>
+
+      {/* Content Column */}
+      <ScrollReveal>
+        <h2 className="section-title mb-6">Quality Assurance</h2>
+        <p className="section-text mb-8">
+          Maintaining the highest standards of quality in every project and deliverable is our top priority. We believe that quality is not just about meeting expectations but exceeding them consistently.
+        </p>
+
+        {/* --- NEWLY ADDED LIST FROM IMAGE --- */}
+        <ul className="space-y-6">
+          {/* List Item 1: Rigorous Testing */}
+          <li className="flex items-start">
+            <div className="flex-shrink-0">
+              <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+              </svg>
+            </div>
+            <div className="ml-4">
+              <h4 className="text-lg font-bold text-gray-800">Rigorous Testing</h4>
+              <p className="mt-1 text-gray-600">Every solution undergoes comprehensive testing before delivery.</p>
+            </div>
+          </li>
+
+          {/* List Item 2: Best Practices */}
+          <li className="flex items-start">
+            <div className="flex-shrink-0">
+              <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+              </svg>
+            </div>
+            <div className="ml-4">
+              <h4 className="text-lg font-bold text-gray-800">Best Practices</h4>
+              <p className="mt-1 text-gray-600">We adhere to industry best practices and standards in all our work.</p>
+            </div>
+          </li>
+
+          {/* List Item 3: Continuous Improvement */}
+          <li className="flex items-start">
+            <div className="flex-shrink-0">
+              <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+              </svg>
+            </div>
+            <div className="ml-4">
+              <h4 className="text-lg font-bold text-gray-800">Continuous Improvement</h4>
+              <p className="mt-1 text-gray-600">We constantly evaluate and refine our processes for better outcomes.</p>
+            </div>
+          </li>
+
+          {/* List Item 4: Client Satisfaction */}
+          <li className="flex items-start">
+            <div className="flex-shrink-0">
+              <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+              </svg>
+            </div>
+            <div className="ml-4">
+              <h4 className="text-lg font-bold text-gray-800">Client Satisfaction</h4>
+              <p className="mt-1 text-gray-600">We measure success by the satisfaction and success of our clients.</p>
+            </div>
+          </li>
+        </ul>
+      </ScrollReveal>
     </div>
   </div>
 </section>
 
-      {/* Quality Assurance */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <ScrollReveal delay={200}>
-              <img 
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
-                alt="Quality Assurance" 
-                className="rounded-lg shadow-lg w-full"
-              />
-            </ScrollReveal>
-            <ScrollReveal>
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">Quality Assurance</h2>
-              <p className="text-gray-700 mb-6">
-                Maintaining the highest standards of quality in every project and deliverable is our top priority. We believe that quality is not just about meeting expectations but exceeding them consistently.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 mt-0.5 mr-3 text-sk-green" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <div>
-                    <h3 className="font-medium text-lg">Rigorous Testing</h3>
-                    <p className="text-gray-600">Every solution undergoes comprehensive testing before delivery.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 mt-0.5 mr-3 text-sk-green" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <div>
-                    <h3 className="font-medium text-lg">Best Practices</h3>
-                    <p className="text-gray-600">We adhere to industry best practices and standards in all our work.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 mt-0.5 mr-3 text-sk-green" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <div>
-                    <h3 className="font-medium text-lg">Continuous Improvement</h3>
-                    <p className="text-gray-600">We constantly evaluate and refine our processes for better outcomes.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 mt-0.5 mr-3 text-sk-green" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  <div>
-                    <h3 className="font-medium text-lg">Client Satisfaction</h3>
-                    <p className="text-gray-600">We measure success by the satisfaction and success of our clients.</p>
-                  </div>
-                </li>
-              </ul>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Partnerships */}
-      <section className="py-16 bg-gray-50">
+      {/* --- Our Partnerships Section --- */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h2 className="section-heading">Our Partnerships</h2>
-            <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <h2 className="section-title text-center">Our Partnerships</h2>
+            <p className="text-center section-text mb-12 max-w-3xl mx-auto">
               Proud to partner with industry leaders to deliver exceptional value to our clients.
             </p>
           </ScrollReveal>
-
           <div className="flex flex-wrap justify-center items-center gap-12">
             <ScrollReveal>
-  <div className="bg-white p-8 rounded-lg shadow-md flex justify-center items-center">
-    <button
-      className="text-2xl font-bold text-center text-sk-primary"
-      onClick={() => window.location.href = "https://ksglobals.com"}
-    >
-      KS Globals
-    </button>
-  </div>
-</ScrollReveal>
-
-<ScrollReveal>
-  <div className="bg-white p-8 rounded-lg shadow-md flex justify-center items-center">
-    <button
-      className="text-2xl font-bold text-center text-sk-primary"
-      onClick={() => window.location.href = "https://ksglobals.com"}
-    >
-      <img
-        src={Ksglobals} // Replace this with the correct import or public path
-        alt="KS Globals"
-        className="h-8 object-contain"
-      />
-    </button>
-  </div>
-</ScrollReveal>
-
-            {/* Add more partners as needed */}
+              <a href="https://ksglobals.com" target="_blank" rel="noopener noreferrer" className="partner-logo">
+                <img src={Ksglobals} alt="KS Globals" className="h-12 object-contain"/>
+              </a>
+            </ScrollReveal>
+            {/* Add more partners here */}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-sk-primary text-white">
+      {/* --- CTA Section --- */}
+      <section className="cta-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold mb-6">Ready to Work Together?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <h2 className="cta-title">Ready to Work Together?</h2>
+            <p className="cta-text">
               Let's collaborate to transform your digital presence and drive sustainable growth for your business.
             </p>
-            <Link
-              to="/contact"
-              className="inline-block px-8 py-4 bg-white text-sk-primary font-medium rounded-md transition-all duration-300 hover:bg-sk-green hover:text-white transform hover:scale-105 hover:shadow-lg"
-            >
+            <Link to="/contact" className="cta-button">
               Contact Us Today
             </Link>
           </ScrollReveal>
-        </div>
-      </section>
-      {/* Stats Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <ScrollReveal>
-              <div className="stat-card">
-                <div className="text-4xl font-bold text-sk-primary mb-2">10+</div>
-                <div className="text-gray-600 font-medium">Clients Served</div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <div className="stat-card">
-                <div className="text-4xl font-bold text-sk-primary mb-2">95%</div>
-                <div className="text-gray-600 font-medium">Client Satisfaction</div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={200}>
-              <div className="stat-card">
-                <div className="text-4xl font-bold text-sk-primary mb-2">10+</div>
-                <div className="text-gray-600 font-medium">Team Members</div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={300}>
-              <div className="stat-card">
-                <div className="text-4xl font-bold text-sk-primary mb-2">3+</div>
-                <div className="text-gray-600 font-medium">Products Delivered</div>
-              </div>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
     </div>
