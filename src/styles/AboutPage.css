@@ -52,13 +52,13 @@
 /* --- Hero Section --- */
 .about-hero {
   position: relative;
-  height: 50vh; /* Reduced from 60vh */
-  min-height: 350px; /* Reduced from 400px */
+  height: 50vh;
+  min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: white; /* Default color for text inside this section */
   background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=1600&h=900&q=80') no-repeat center center/cover;
 }
 
@@ -78,22 +78,27 @@
   max-w: 4xl;
 }
 
-.hero-title {
-  font-size: 3rem; /* Reduced from 3.5rem */
+/* This more specific selector ensures the title's color is applied */
+.about-hero .hero-title {
+  font-size: 3rem;
   font-weight: 800;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  color: white; 
 }
 
-.hero-subtitle {
-  font-size: 1.25rem; /* Reduced from 1.5rem */
-  margin-top: 0.75rem; /* Reduced from 1rem */
+/* --- CORRECTED RULE FOR SUBTITLE --- */
+/* This more specific selector ensures the subtitle's color is applied */
+.about-hero .hero-subtitle {
+  font-size: 1.25rem;
+  margin-top: 0.75rem;
   font-weight: 300;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  color: white; /* Explicitly setting color to white */
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 2.25rem; }
-  .hero-subtitle { font-size: 1.1rem; }
+  .about-hero .hero-title { font-size: 2.25rem; }
+  .about-hero .hero-subtitle { font-size: 1.1rem; }
 }
 
 /* --- Vision & Mission Section --- */
@@ -102,27 +107,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px; /* Reduced from 56px */
-  height: 48px; /* Reduced from 56px */
-  border-radius: 12px; /* Reduced from 16px */
-  background-color: var(--bg-light);
+  width: 48px;
+  height: 48px;
+  border-radius: 16px; /* Increased for a softer look */
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
   color: var(--primary-color);
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  box-shadow: 7px 7px 15px #c7c7c7, -7px -7px 15px #ffffff; /* Neumorphic shadow */
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 10px 10px 20px #c7c7c7, -10px -10px 20px #ffffff;
 }
 
 .vm-label {
   display: inline-block;
-  padding: 0.25rem 0.8rem; /* Reduced padding */
-  background-color: rgba(var(--primary-rgb), 0.1);
+  padding: 0.5rem 1rem;
+  background: rgba(var(--primary-rgb), 0.1);
   color: var(--primary-color);
-  border-radius: 9999px;
-  font-size: 0.8rem; /* Reduced from 0.875rem */
-  font-weight: 700;
+  border-radius: 50px; /* Pill-shaped for a modern feel */
+  font-size: 0.875rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+  transition: all 0.3s ease;
 }
 
+.vm-label:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
 /* --- Foundation Section --- */
 .foundation-section {
   position: relative;
