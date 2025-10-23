@@ -226,26 +226,6 @@ const AboutPage = () => {
   </div>
 </section>
 
-      {/* --- Our Partnerships Section --- */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <h2 className="section-title text-center">Our Partnerships</h2>
-            <p className="text-center section-text mb-12 max-w-3xl mx-auto">
-              Proud to partner with industry leaders to deliver exceptional value to our clients.
-            </p>
-          </ScrollReveal>
-          <div className="flex flex-wrap justify-center items-center gap-12">
-            <ScrollReveal>
-              <a href="https://ksglobals.com" target="_blank" rel="noopener noreferrer" className="partner-logo">
-                <img src={Ksglobals} alt="KS Globals" className="h-12 object-contain"/>
-              </a>
-            </ScrollReveal>
-            {/* Add more partners here */}
-          </div>
-        </div>
-      </section>
-
       {/* --- CTA Section --- */}
       <section className="cta-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

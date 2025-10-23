@@ -2,8 +2,11 @@ import React, { useEffect, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '@/components/ScrollReveal';
 import { FaChartLine, FaRegClock, FaBullseye, FaBroadcastTower, FaRobot, FaHeadset } from 'react-icons/fa';
+import ClickSpark from '../components/ClickSpark'; // Make sure the path to ClickSpark is correct
 
 import '../styles/HomePage.css'; // Make sure this is imported
+import ScrollStack, { ScrollStackItem } from '../components/ScrollStack'
+
 
 const heroImageSrc = "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80";
 
@@ -58,7 +61,15 @@ const HomePage = () => {
                 <h1>Transform Your <span className="gradient-text">Digital Presence</span></h1>
                 <p>Strategic Knights is your growth partner - blending digital marketing, SEO, social media magic, and powerful tech solutions to help your brand rise, shine, and lead.</p>
                 <div className="flex flex-wrap items-center gap-6 mt-10">
-                  <Link to="/contact" className="hero-cta-button">Get Started</Link>
+                  <ClickSpark
+                    sparkColor='#fff'
+                    sparkSize={10}
+                    sparkRadius={15}
+                    sparkCount={8}
+                    duration={400}
+                  >
+                    <Link to="/contact" className="hero-cta-button">Get Started</Link>
+                  </ClickSpark>
                   <Link to="/services" className="hero-cta-secondary">Learn More →</Link>
                 </div>
               </ScrollReveal>
@@ -134,7 +145,15 @@ const HomePage = () => {
           <ScrollReveal>
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Digital Presence?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">Join hundreds of successful businesses that trust Strategic Knights for their digital growth.</p>
-            <Link to="/contact" className="cta-button-animated">Get Started Today</Link>
+            <ClickSpark
+              sparkColor='#fff'
+              sparkSize={10}
+              sparkRadius={15}
+              sparkCount={8}
+              duration={400}
+            >
+              <Link to="/contact" className="cta-button-animated">Get Started Today</Link>
+            </ClickSpark>
           </ScrollReveal>
         </div>
       </section>
