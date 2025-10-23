@@ -27,7 +27,6 @@ body {
     background: var(--brand-background);
     padding: 8rem 0;
     position: relative;
-    overflow: hidden;
 }
 
 .hero-content-grid {
@@ -66,8 +65,8 @@ body {
 .hero-cta-button {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background-color: var(--brand-accent-purple);
-    color: white;
+    background-color: white;
+    color: var(--brand-accent-purple);
     font-weight: 600;
     border-radius: 9999px;
     text-decoration: none;
@@ -81,13 +80,15 @@ body {
 .hero-cta-secondary {
     display: inline-block;
     font-weight: 600;
-    color: var(--sk-light-text);
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 .hero-cta-secondary:hover {
-    color: var(--sk-dark-text);
+    color: #ded41a;
 }
+
+
 
 /* Right side: Graphics Container */
 .hero-graphics-container {

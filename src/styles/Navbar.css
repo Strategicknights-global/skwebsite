@@ -81,9 +81,17 @@
   color: var(--primary-text);
   transition: color 0.3s ease;
 }
-.desktop-nav a.active,
-.desktop-nav a:hover {
+
+.desktop-nav a:hover{
   color: var(--active-link-color);
+}
+
+.desktop-nav a.active {
+  color: white;
+  background: linear-gradient(135deg, #6201ff, #f107a3); /* Violet-Pink */
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: 0.3s ease;
 }
 
 /* --- Mobile Menu Toggle placed in the third column --- */
@@ -117,8 +125,12 @@
   text-decoration: none; color: var(--primary-text);
   font-weight: 600;
 }
-.mobile-nav-menu a.active { color: var(--active-link-color); }
-
+.mobile-nav-menu a.active {
+  color: white;
+  background: #7b2ff7;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
 
 /* --- Responsive Breakpoints --- */
 @media (max-width: 900px) {
