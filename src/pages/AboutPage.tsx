@@ -236,7 +236,10 @@ Through cutting-edge technology, data-driven insights, and human-centered design
   </div>
 </section>
 
+<<<<<<< HEAD
      
+=======
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
       {/* --- CTA Section --- */}
       <section className="cta-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

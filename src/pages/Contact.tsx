@@ -73,7 +73,10 @@ const ContactPage = () => {
           </ScrollReveal>
         </div>
       </section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
     </div>
   );
 };

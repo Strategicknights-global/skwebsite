@@ -1,7 +1,6 @@
-/* ServicesPage.css - Perfectly Synced with HomePage.css */
-
-/* --- Root variables from HomePage for 100% consistency --- */
+/* --- LAVENDER THEME COLOR PALETTE & ROOT VARIABLES --- */
 :root {
+<<<<<<< HEAD
     --sk-primary:#15803d;
     --sk-secondary1: #ffffff;
     --sk-dark-text: #111827;
@@ -12,101 +11,117 @@
     --sk-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --brand-accent-green: #10b981;
     --accent-green: #006732;
+=======
+    --lavender-light: #F0F2FE; /* The lighter background color from the image */
+    --lavender-dark: #E6E9FD;  /* The darker background shape color */
+    --text-dark: #374151;      /* A strong, dark gray for text */
+    --text-light: #6b7280;     /* A softer gray for descriptions */
+    --accent-primary: #6366F1; /* A vibrant indigo/lavender for accents */
+    --accent-secondary: #818CF8;/* A lighter accent */
+    --card-bg: #FFFFFF;
+    --border-light: #E5E7EB;
+    
+    /* Soft, layered shadow for a modern feel */
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
 }
 
-/* --- Reusable Section Heading (from Homepage) --- */
+body {
+    background-color: var(--lavender-light); /* Sets the default base color */
+}
+
+
+/* --- SHARED SECTION STYLES --- */
 .section-heading {
-    font-size: 2.75rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: var(--sk-dark-text);
+    font-size: 2.75rem; font-weight: 800; text-align: center;
+    margin-bottom: 1rem; color: var(--text-dark);
 }
-.section-heading + p {
-    font-size: 1.125rem;
-    color: var(--sk-light-text);
-    text-align: center;
-    max-width: 40rem;
-    margin-left: auto;
-    margin-right: auto;
+.section-subheading {
+    font-size: 1.125rem; color: var(--text-light);
+    text-align: center; max-width: 40rem;
+    margin-left: auto; margin-right: auto; margin-bottom: 3.5rem;
 }
 
 
-/* --- Services Page Specific Sections --- */
-
-/* Hero Section */
+/* --- HERO SECTION WITH TWO-TONE BACKGROUND --- */
 .services-hero {
+<<<<<<< HEAD
     padding: 8rem 0 6rem;
     background: #c3edd3;
     text-align: center;
-}
-.services-hero h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--sk-dark-text);
-    margin-bottom: 1.5rem;
-}
-.services-hero p {
-    font-size: 1.25rem;
-    color: var(--sk-light-text);
-    max-width: 40rem;
-    margin: 0 auto;
+=======
+    /* Using the darker lavender as the base for the hero */
+    background-color: var(--lavender-dark);
+    padding: 8rem 0 12rem; text-align: center;
+    position: relative; overflow: hidden;
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
 }
 
+/* This creates the curve effect from your image */
+.services-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 8rem; /* Controls size of the curve */
+    background: var(--lavender-light);
+    border-radius: 100% 100% 0 0 / 100%;
+    transform: scaleX(2.5);
+}
+
+.services-hero h1 {
+    font-size: 3.5rem; font-weight: 800;
+    color: var(--text-dark); margin-bottom: 1.5rem;
+    position: relative; z-index: 1; /* Sits above the curve */
+}
+.services-hero p {
+    font-size: 1.25rem; color: var(--text-light);
+    max-width: 40rem; margin: 0 auto;
+    position: relative; z-index: 1; /* Sits above the curve */
+}
+
+<<<<<<< HEAD
 /* Services Grid Section (Matches .homepage-services-section) */
 .services-grid-section {
     padding: 5rem 0;
     background-color: var(--sk-secondary1);
 }
 /* This is the main service card style, cloned from homepage */
+=======
+
+/* --- SERVICES GRID SECTION --- */
+.services-grid-section { padding: 0 0 5rem 0; background-color: var(--lavender-light); }
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
 .service-card-detailed {
-    background: white;
-    border-radius: 0.75rem;
-    padding: 2rem 1.5rem;
-    text-align: left;
-    border: 1px solid var(--sk-border-light);
-    box-shadow: var(--sk-shadow-md);
+    background: var(--card-bg);
+    border-radius: 0.75rem; padding: 2rem 1.5rem; text-align: left;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-md);
     position: relative;
-    overflow: hidden;
+    height: 100%; display: flex; flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.service-card-detailed:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--sk-primary), var(--sk-secondary));
-    opacity: 0;
-    transform: scaleX(0);
-    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .service-card-detailed:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--sk-shadow-lg);
-}
-.service-card-detailed:hover:before {
-    opacity: 1;
-    transform: scaleX(1);
+    transform: translateY(-8px); box-shadow: var(--shadow-lg);
 }
 .service-card-detailed .icon {
+<<<<<<< HEAD
     margin-bottom: 1.25rem;
     color: var(--brand-accent-green);
 }
 .service-card-detailed .icon svg {
     width: 2.5rem;
     height: 2.5rem;
+=======
+    margin-bottom: 1.25rem; color: var(--accent-primary);
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
 }
+.service-card-detailed .icon svg { width: 2.5rem; height: 2.5rem; }
 .service-card-detailed h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--sk-dark-text);
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.5rem;
 }
+<<<<<<< HEAD
 .service-card-detailed .content {
     color: var(--sk-light-text);
     margin-bottom: 1rem;
@@ -136,59 +151,40 @@
     height: 1rem;
     flex-shrink: 0;
     margin-top: 0.25rem;
+=======
+.service-card-detailed .description {
+    color: var(--text-light); margin-bottom: 1rem; flex-grow: 1;
+}
+.features-list { list-style: none; padding: 0; margin: 0; }
+.features-list li { display: flex; align-items: flex-start; gap: 0.5rem; }
+.features-list .check-icon {
+    color: var(--accent-primary); width: 1rem; height: 1rem;
+    flex-shrink: 0; margin-top: 0.25rem;
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
 }
 
-/* --- Our Process Section (with Auto-Scrolling Marquee) --- */
-.process-section {
-    padding: 5rem 0;
-    background-color: var(--sk-background-light);
-}
 
-/* This new wrapper is essential for the marquee effect */
+/* --- PROCESS SECTION --- */
+.process-section { padding: 5rem 0; background-color: #f9fafe; /* A slightly different light tone */ }
 .process-marquee-wrapper {
-    overflow: hidden; /* Hides the cards outside the viewport */
-    position: relative;
-    width: 100%;
-    /* Adds a subtle fade on the edges for a smoother entry/exit */
+    overflow: hidden;
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
-
 .process-steps-container {
-    display: flex;
-    gap: 1.5rem;
-    width: max-content; /* Allows the container to be wide enough for all cards */
-    /* The animation that drives the scrolling */
-    animation: marquee 30s linear infinite;
+    display: flex; gap: 1.5rem; width: max-content;
+    animation: marquee 40s linear infinite;
 }
-
-/* Pauses the animation on hover */
-.process-marquee-wrapper:hover .process-steps-container {
-    animation-play-state: paused;
-}
-
-/* The marquee animation keyframes */
 @keyframes marquee {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        /* This moves the container by half its width, creating the loop */
-        transform: translateX(-50%);
-    }
+    from { transform: translateX(0%); } to { transform: translateX(-50%); }
 }
+.process-steps-container:hover { animation-play-state: paused; }
 
 .process-step-card {
-    /* --- This ensures all cards are the same size --- */
-    width: 280px; /* Fixed width for each card */
-    display: flex; /* Enables flexbox for alignment */
-    flex-direction: column; /* Stacks content vertically */
-    flex-shrink: 0; /* Prevents cards from shrinking */
-    /* --- End of sizing rules --- */
-    
-    background: white;
-    padding: 2rem;
+    width: 280px; flex-shrink: 0;
+    background: var(--card-bg); padding: 2rem;
     border-radius: 0.75rem;
+<<<<<<< HEAD
     border-top: 4px solid var(--sk-primary);
     box-shadow: var(--sk-shadow-md);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -241,24 +237,26 @@
     color: var(--accent-green);
     opacity: 0.5;
     margin-bottom: 0.5rem;
+=======
+    box-shadow: var(--shadow-md);
+    border-top: 4px solid var(--accent-primary);
+}
+.process-step-card .step-number {
+    font-size: 1.5rem; font-weight: 800; color: var(--accent-secondary);
+    opacity: 0.5; margin-bottom: 0.5rem;
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
 }
 .process-step-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--sk-dark-text);
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.5rem;
 }
-.process-step-card p {
-    color: var(--sk-light-text);
-}
+.process-step-card p { color: var(--text-light); }
 
 
-/* Final CTA Section */
-.services-cta-section {
-    padding: 5rem 0;
-    background-color: var(--sk-background-light);
-}
+/* --- FINAL CTA SECTION --- */
+.services-cta-section { padding: 5rem 0; background-color: var(--lavender-light); }
 .cta-card {
+<<<<<<< HEAD
     max-width: 56rem; /* 896px */
     margin: 0 auto;
     background: white;
@@ -271,13 +269,21 @@
 }
 .cta-card .text-content {
     padding: 3rem;
+=======
+    max-width: 64rem; /* A bit wider to accommodate image */
+    margin: 0 auto; background: var(--card-bg);
+    border-radius: 0.75rem; box-shadow: var(--shadow-lg); overflow: hidden;
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
 }
+.cta-grid { display: grid; grid-template-columns: repeat(1, 1fr); align-items: center; }
+@media (min-width: 768px) { .cta-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.cta-card .text-content { padding: 3rem; }
 .cta-card h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--sk-dark-text);
-    margin-bottom: 1rem;
+    font-size: 2rem; font-weight: 800;
+    color: var(--text-dark); margin-bottom: 1rem;
 }
+<<<<<<< HEAD
 .cta-card p {
     color: var(--sk-light-text);
     margin-bottom: 1.5rem;
@@ -299,17 +305,27 @@
     position: relative;
     min-height: 250px;
 }
+=======
+.cta-card p { color: var(--text-light); margin-bottom: 1.5rem; }
+.cta-button {
+    display: inline-block; padding: 0.75rem 1.5rem;
+    background-color: var(--accent-primary); color: white;
+    font-weight: 600; text-decoration: none; border-radius: 9999px; /* Pill shape */
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover { background-color: #4338ca; } /* Darker primary */
+
+.cta-card .image-container { position: relative; min-height: 250px; height: 100%; }
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
 .cta-card .image-container img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute; inset: 0; width: 100%; height: 100%;
     object-fit: cover;
 }
 
-
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
+    .services-hero { padding: 6rem 0 10rem; }
     .services-hero h1 { font-size: 2.5rem; }
     .section-heading { font-size: 2.25rem; }
+    .cta-card .image-container { display: none; }
 }

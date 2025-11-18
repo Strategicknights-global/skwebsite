@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '@/components/ScrollReveal';
-import '../styles/ServicesPage.css'; // Make sure the correct CSS is imported
+import '../styles/ServicesPage.css'; // Make sure this is linked to the NEW CSS below
 
 const ServicesPage = () => {
   useEffect(() => {
     document.title = "Services | Strategic Knights";
   }, []);
 
-  // --- VERIFIED ARRAY WITH ALL 9 SERVICES ---
   const services = [
     {
       title: " Web & App Development",
@@ -74,6 +73,7 @@ const ServicesPage = () => {
           "Incident Response & Digital Forensics"]
     },
     {
+<<<<<<< HEAD
       title: "Branding & Creative Design",
       description: "Crafting visual identities and compelling brand narratives that resonate.",
       content: "We translate your brand’s purpose into powerful visuals and emotional connections that leave lasting impressions.",
@@ -87,6 +87,12 @@ const ServicesPage = () => {
           "Motion Graphics & Animation",
           "Corporate Presentations & Visual Decks",
           "Rebranding & Brand Modernization"]
+=======
+      title: "Cybersecurity and Website Protection",
+      description: "Secure, scan, and defend your digital assets completely.",
+      icon: ( <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg> ),
+      features: ["SSL Setup & Renewal", "Malware Scanning & Removal", "Firewall & Threat Detection", "Penetration Testing"]
+>>>>>>> 06e8f0c5a27a8f6237048964d53ba52a48ef831d
     },
     {
       title: "Digital Marketing & Growth Strategy",
@@ -170,7 +176,7 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <h2 className="section-heading">What We Offer</h2>
-            <p className="mb-12">
+            <p className="section-subheading">
               From concept to launch and beyond, we provide the expertise to make your vision a reality.
             </p>
           </ScrollReveal>
@@ -187,7 +193,7 @@ const ServicesPage = () => {
                   <ul className="features-list space-y-2">
                     {service.features.map((feature, i) => (
                       <li key={i}>
-                        <svg className="w-4 h-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
+                        <svg className="check-icon" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -204,7 +210,7 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <h2 className="section-heading">Our Process</h2>
-            <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <p className="section-subheading">
               A systematic approach to deliver exceptional results
             </p>
           </ScrollReveal>
@@ -226,7 +232,7 @@ const ServicesPage = () => {
       <section className="services-cta-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="cta-card">
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="cta-grid">
               <div className="text-content">
                 <ScrollReveal>
                   <h2>Have a Project in Mind?</h2>
@@ -238,7 +244,7 @@ const ServicesPage = () => {
               </div>
               <div className="hidden md:block image-container">
                 <img 
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" 
                   alt="Contact Us" 
                 />
               </div>
