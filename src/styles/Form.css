@@ -68,7 +68,7 @@
   font-weight: 600;
   font-size: 1rem;
   border: none;
-  background-color: var(--accent-purple);
+  background-color: var(--brand-accent-green);
   color: white;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
@@ -76,6 +76,5 @@
 }
 
 .btn-submit:hover {
-  background-color: #5b21b6; /* Darker purple */
   transform: translateY(-2px);
 }

@@ -2,14 +2,16 @@
 
 /* --- Root variables from HomePage for 100% consistency --- */
 :root {
-    --sk-primary: #4f46e5;
-    --sk-secondary: #10b981;
+    --sk-primary:#15803d;
+    --sk-secondary1: #ffffff;
     --sk-dark-text: #111827;
     --sk-light-text: #4b5563;
     --sk-background-light: #f9fafb;
     --sk-border-light: #e5e7eb;
     --sk-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --sk-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --brand-accent-green: #10b981;
+    --accent-green: #006732;
 }
 
 /* --- Reusable Section Heading (from Homepage) --- */
@@ -35,7 +37,7 @@
 /* Hero Section */
 .services-hero {
     padding: 8rem 0 6rem;
-    background: linear-gradient(120deg, #fdfdfd 0%, #f0f2f5 100%);
+    background: #c3edd3;
     text-align: center;
 }
 .services-hero h1 {
@@ -54,7 +56,7 @@
 /* Services Grid Section (Matches .homepage-services-section) */
 .services-grid-section {
     padding: 5rem 0;
-    background-color: white;
+    background-color: var(--sk-secondary1);
 }
 /* This is the main service card style, cloned from homepage */
 .service-card-detailed {
@@ -93,7 +95,7 @@
 }
 .service-card-detailed .icon {
     margin-bottom: 1.25rem;
-    color: var(--sk-primary);
+    color: var(--brand-accent-green);
 }
 .service-card-detailed .icon svg {
     width: 2.5rem;
@@ -105,11 +107,18 @@
     color: var(--sk-dark-text);
     margin-bottom: 0.5rem;
 }
-.service-card-detailed .description {
+.service-card-detailed .content {
     color: var(--sk-light-text);
     margin-bottom: 1rem;
     flex-grow: 1; /* Pushes features list down */
 }
+
+.service-card-detailed .description {
+    color: var(--sk-text);
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Pushes features list down */
+}
+
 .service-card-detailed .features-list {
     list-style: none;
     padding: 0;
@@ -188,7 +197,7 @@
 .process-step-card .step-number {
     font-size: 2rem;
     font-weight: 800;
-    color: var(--sk-primary);
+    color: var(--brand-accent-green);
     opacity: 0.5;
     margin-bottom: 0.5rem;
 }
@@ -196,7 +205,7 @@
 .process-step-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--sk-dark-text);
+    color: var(--accent-green);
     margin-bottom: 0.5rem;
 }
 
@@ -204,8 +213,8 @@
     color: var(--sk-light-text);
 }
 /* Hiding the scrollbar for a cleaner look */
-.process-steps-container::-webkit-scrollbar { display: none; }
-.process-steps-container { -ms-overflow-style: none; scrollbar-width: none; }
+.process-steps-container::-webkit-scrollbar { display: none; background-color: var(--brand-accent-green); }
+.process-steps-container { -ms-overflow-style: none; scrollbar-width: none; color: var(--brand-accent-green); }
 
 .process-step-card {
     min-width: 280px;
@@ -215,7 +224,13 @@
     border-top: 4px solid var(--sk-primary);
     box-shadow: var(--sk-shadow-md);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--brand-accent-green);
 }
+.process-step-card,
+.service-card-detailed:before {
+  border-top: 4px solid var(--brand-accent-green);
+}
+
 .process-step-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--sk-shadow-lg);
@@ -223,7 +238,7 @@
 .process-step-card .step-number {
     font-size: 2rem;
     font-weight: 800;
-    color: var(--sk-primary);
+    color: var(--accent-green);
     opacity: 0.5;
     margin-bottom: 0.5rem;
 }
@@ -248,7 +263,7 @@
     margin: 0 auto;
     background: white;
     border-radius: 0.75rem;
-    box-shadow: var(--sk-shadow-lg);
+    color: var(--brand-accent-green);
     overflow: hidden;
 }
 .cta-card .grid {
@@ -270,7 +285,7 @@
 .cta-card .cta-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: var(--sk-primary);
+    background-color: var(--brand-accent-green);
     color: white;
     font-weight: 600;
     text-decoration: none;
@@ -278,7 +293,7 @@
     transition: background-color 0.3s ease;
 }
 .cta-card .cta-button:hover {
-    background-color: #4338ca; /* Darker primary */
+    background-color: var(--brand-accent-green); /* Darker primary */
 }
 .cta-card .image-container {
     position: relative;

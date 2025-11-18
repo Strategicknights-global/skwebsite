@@ -1,9 +1,9 @@
-/* HomePage.css - Graphical Redesign WITHOUT the purple blob */
+/* HomePage.css - Graphical Redesign WITH Green Theme */
 
 :root {
-    /* Original brand colors */
-    --sk-primary: #4f46e5;
-    --sk-secondary: #10b981;
+    /* Updated brand colors */
+    --sk-primary: #16A34A; /* Bright Green */
+    --sk-secondary: #718e84; /* Emerald Green */
     --sk-dark-text: #111827;
     --sk-light-text: #4b5563;
     --sk-background-light: #f9fafb;
@@ -12,8 +12,8 @@
     --sk-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
     /* New variables for the hero theme */
-    --brand-background: linear-gradient(135deg, #f0f4ff 0%, #e6e6fa 100%);
-    --brand-accent-purple: #6D28D9;
+    --brand-background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    --brand-accent-green: #117d5f; /* Dark Green */
 }
 
 body {
@@ -52,7 +52,12 @@ body {
     line-height: 1.15;
 }
 .hero-text-content .gradient-text {
-    background: linear-gradient(90deg, var(--brand-accent-purple), var(--sk-primary));
+    background: linear-gradient(90deg, var(--brand-accent-green), var(--sk-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero-text-content .text {
+    background: var(--brand-accent-green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -66,17 +71,17 @@ body {
 .hero-cta-button {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background-color: var(--brand-accent-purple);
+    background-color: var(--brand-accent-green);
     color: white;
     font-weight: 600;
     border-radius: 9999px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(109, 40, 217, 0.3);
+    box-shadow: 0 4px 20px rgba(6, 95, 70, 0.3);
 }
 .hero-cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(109, 40, 217, 0.4);
+    box-shadow: 0 6px 25px rgba(24, 200, 150, 0.4);
 }
 .hero-cta-secondary {
     display: inline-block;
@@ -86,7 +91,7 @@ body {
     transition: color 0.3s ease;
 }
 .hero-cta-secondary:hover {
-    color: var(--sk-dark-text);
+    color: var(--brand-accent-green);
 }
 
 /* Right side: Graphics Container */
@@ -101,12 +106,9 @@ body {
     position: relative;
     max-width: 100%;
     z-index: 10;
-    border-radius: 1rem; /* Added border-radius for a softer look on the image itself */
+    border-radius: 1rem;
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
 }
-
-/* --- THE PURPLE BLOB STYLE HAS BEEN REMOVED --- */
-
 
 /* --- Shared Section Heading Style --- */
 .section-heading {
@@ -118,8 +120,6 @@ body {
 }
 
 /* --- Services Section (Glassmorphism Redesign) --- */
-
-/* Keyframe animation for the moving gradient background */
 @keyframes aurora-bg {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -128,14 +128,10 @@ body {
 
 .homepage-services-section {
     padding: 7rem 0;
-    position: relative; /* Essential for positioning the background */
-    overflow: hidden;   /* Keeps the animated gradient contained */
+    position: relative;
+    overflow: hidden;
 }
 
-/* 
-  This pseudo-element creates the animated gradient background.
-  It sits behind the service items.
-*/
 .homepage-services-section::before {
     content: '';
     position: absolute;
@@ -143,87 +139,67 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0; /* Places it behind the content */
-    
-    /* A beautiful, multi-color gradient using your brand colors */
+    z-index: 0;
     background: linear-gradient(
         120deg, 
-        #e0e7ff, /* Light Indigo */
-        #f3e8ff, /* Light Purple */
-        #e0f2fe, /* Light Blue */
-        #e0e7ff  /* Back to Light Indigo */
+        #dcfce7, /* Light Green */
+        #d1fae5, /* Mint */
+        #bbf7d0, /* Pastel Green */
+        #dcfce7
     );
-    background-size: 300% 300%; /* Make the gradient large so the movement is slow */
-    
-    /* Apply the animation */
+    background-size: 300% 300%;
     animation: aurora-bg 20s ease infinite;
 }
 
-/* The Glassmorphic Item */
 .service-item {
-    /* Set position to relative so its content is above the pseudo-elements */
     position: relative;
     padding: 2.5rem 2rem;
     text-align: center;
-    border-radius: 1.25rem; /* A slightly larger radius looks better with glass */
-    
-    /* --- The Glass Effect --- */
-    background: rgba(255, 255, 255, 0.4); /* Semi-transparent white background */
-    backdrop-filter: blur(12px); /* THE FROSTED GLASS EFFECT! */
-    -webkit-backdrop-filter: blur(12px); /* For Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* A subtle border to define the edge */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* Soft, subtle shadow */
-    
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(6, 95, 70, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
-
 .service-item:hover {
     transform: translateY(-12px) scale(1.02);
-    /* Make the glass slightly more opaque and brighter on hover */
     background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 16px 40px -10px rgba(31, 38, 135, 0.2);
+    box-shadow: 0 16px 40px -10px rgba(6, 95, 70, 0.2);
+    color:var(--brand-accent-green);
 }
-
-/* Icon Styling - needs to be vibrant and solid */
 .service-item svg {
-    /* Using a darker shade of your primary for better contrast on the light glass */
-    color: #4338ca; 
+    color: #065F46;
     margin: 0 auto 1rem;
     height: 2.5rem;
     width: 2.5rem;
     transition: transform 0.3s ease;
 }
-
 .service-item:hover svg {
-    transform: scale(1.15) rotate(-5deg); /* Add a slight rotation for a playful effect */
+    transform: scale(1.15) rotate(-5deg);
 }
-
-/* Title Styling - needs to be highly readable */
 .service-item h3 {
     color: var(--sk-dark-text);
-    font-weight: 700; /* Bolder text for readability on the glass */
+    font-weight: 700;
     transition: color 0.3s ease;
 }
-
 .service-item:hover h3 {
-    color: var(--sk-primary);
+    color: var(--brand-accent-green);
 }
 
-/* --- Why Choose Us Section (Client-Attracting Redesign) --- */
-
+/* --- Why Choose Us Section --- */
 .homepage-benefits-section {
-    /* Uses a subtle gradient for a premium feel */
-    background: linear-gradient(180deg, white 0%, #f7f7ff 100%);
+    background: linear-gradient(180deg, white 0%, #f0fdf4 100%);
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
 }
-
 .benefit-card {
     background: white;
     padding: 2.5rem 2rem;
     border-radius: 1rem;
-    border: 1px solid #e5e7eb; /* Using --sk-border-light value */
+    border: 1px solid var(--sk-border-light);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     height: 100%;
     text-align: center;
@@ -232,8 +208,6 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Colored background effect on hover */
 .benefit-card::before {
     content: '';
     position: absolute;
@@ -242,54 +216,41 @@ body {
     right: 0;
     bottom: 0;
     z-index: -1;
-    /* Using your brand variables */
-    background: linear-gradient(45deg, var(--sk-primary), var(--brand-accent-purple));
+    background: var(--brand-accent-green);
     opacity: 0;
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
-
 .benefit-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 20px 40px -10px rgba(22, 163, 74, 0.25);
     border-color: transparent;
 }
-
 .benefit-card:hover::before {
     transform: scaleY(1);
     opacity: 1;
 }
-
-/* Icon Styling */
 .benefit-icon {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: var(--sk-primary);
+    color: var(--brand-accent-green);
     transition: color 0.4s ease, transform 0.4s ease;
 }
-
 .benefit-card:hover .benefit-icon {
     color: white;
     transform: scale(1.1);
 }
-
-/* Text Styling */
 .benefit-card h3 {
     font-weight: 700;
-    /* Use your dark text color */
     color: #111827;
     transition: color 0.4s ease;
 }
-
 .benefit-card p {
-    /* Use your light text color */
-    color: #4b5563; 
+    color: #4b5563;
     line-height: 1.6;
     transition: color 0.4s ease;
 }
-
-/* Change text color to white on hover */
 .benefit-card:hover h3,
 .benefit-card:hover p {
     color: white;
@@ -298,29 +259,31 @@ body {
 /* --- CTA Section --- */
 .homepage-cta-section {
     padding: 5rem 0;
-    background: var(--sk-primary);
+    background: var(--brand-accent-green);
     text-align: center;
 }
 .homepage-cta-section h2 {
     font-size: 2.25rem;
     font-weight: 700;
+    color: white;
 }
 .homepage-cta-section p {
     font-size: 1.125rem;
     opacity: 0.9;
+    color: white;
 }
 .homepage-cta-section .cta-button-animated {
     display: inline-block;
     padding: 0.8rem 2.2rem;
     background-color: white;
-    color: var(--sk-primary);
+    color: var(--brand-accent-green);
     font-weight: 700;
     border-radius: 9999px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 .homepage-cta-section .cta-button-animated:hover {
-    background-color: var(--sk-secondary);
+    background-color: var(--sk-dark-text);
     color: white;
     transform: scale(1.05);
 }
@@ -329,65 +292,32 @@ body {
     .hero-text-content h1 { font-size: 3rem; }
 }
 
-/* --- Wave Divider Style --- */
-
-.homepage-hero-section {
-    /* Make sure position is relative so the wave can be positioned against it */
-    position: relative;
-    /* Remove bottom padding to allow the wave to sit at the very edge */
-    padding-bottom: 0; 
-}
-
+/* --- Wave Divider --- */
 .wave-divider {
     position: absolute;
-    bottom: 0; /* Position at the bottom of the hero section */
+    bottom: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
-    line-height: 0; /* Removes any extra space */
-    transform: rotate(180deg); /* Flip the SVG for a nice flowing shape */
+    line-height: 0;
+    transform: rotate(180deg);
 }
-
 .wave-divider svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 150px; /* Adjust the height of the wave here */
+    height: 150px;
 }
-
-/* 
-  Set the fill color of the wave.
-  This color is taken from the animated gradient in the next section
-  to create a seamless transition.
-*/
 .wave-divider .wave-fill {
-    fill: #e0e7ff; 
+    fill: #dcfce7;
 }
 
 /* --- Hero Image Pop & Tilt Hover Effect --- */
-
 .hero-main-image {
-    /* 
-      Set the transition to be smooth and slightly longer 
-      to accommodate the multiple movements. An 'ease-out' curve
-      makes the hover effect feel responsive.
-    */
     transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
 }
-
 .hero-main-image:hover {
-    /*
-      This is the core of the effect. We combine multiple transforms:
-      - translateY(-15px): Lifts the image up to "pop" it off the page.
-      - scale(1.05):       Makes the image 5% larger.
-      - rotate(-2deg):     Tilts the image slightly counter-clockwise.
-    */
     transform: translateY(-15px) scale(1.05) rotate(-2deg);
-
-    /*
-      A more dramatic shadow enhances the "lifted" feel.
-      The purple glow adds a final touch of polish.
-    */
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.25), 
-                0 0 20px -5px rgba(109, 40, 217, 0.2);
+                0 0 20px -5px rgba(6, 95, 70, 0.2);
 }

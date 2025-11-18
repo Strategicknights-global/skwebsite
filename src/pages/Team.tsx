@@ -8,8 +8,8 @@ import '../styles/Team.css';
 
 const TeamPage: React.FC = () => {
   const teamMembers = [
-    { name: "Sathish Kumar", position: "Founder & CEO", image: Sathish, description: "Leading the charge with a vision for transformative digital growth.", social: { linkedin: "https://www.linkedin.com/in/sathish-kumar-0683391b5" } },
-    { name: "Loguhariharan P V", position: "Director of Strategy", image: Logu, description: "Architecting the strategic frameworks that drive client success.", social: { linkedin: "https://www.linkedin.com/in/loguhariharan-p-v-0b178a206"} },
+    { name: "Sathish Kumar", position: "Founder", image: Sathish, description: "Leading the charge with a vision for transformative digital growth.", social: { linkedin: "https://www.linkedin.com/in/sathish-kumar-0683391b5" } },
+    { name: "Loguhariharan P V", position: "Director of Strategy and Operations", image: Logu, description: "Architecting the strategic frameworks that drive client success.", social: { linkedin: "https://www.linkedin.com/in/loguhariharan-p-v-0b178a206"} },
   ];
 
   useEffect(() => {

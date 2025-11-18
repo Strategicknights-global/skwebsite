@@ -9,6 +9,7 @@
     --sk-border-light: #e5e7eb;
     --sk-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --sk-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --brand-accent-green: #117d5f; /* Dark Green */
 }
 
 /* --- Hero Section --- */
@@ -65,7 +66,7 @@
 
 /* --- Info Panel (Right Side) --- */
 .info-panel {
-    background-color: var(--sk-primary);
+    background-color: var(--brand-accent-green);
     color: white;
     padding: 3rem;
     display: flex;
@@ -127,7 +128,7 @@
 }
 .social-icon:hover {
     background: white;
-    color: var(--sk-primary);
+    color: var(--brand-accent-green);
     transform: scale(1.1);
 }
 .social-icon svg {

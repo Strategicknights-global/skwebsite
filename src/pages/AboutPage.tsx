@@ -50,8 +50,8 @@ const AboutPage = () => {
         <div className="hero-overlay"></div>
         <div className="container hero-content">
           <ScrollReveal>
-            <h1 className="hero-title">Forging Digital Dominance</h1>
-            <p className="hero-subtitle">
+            <h1 className="hero-title">Forging Digital Dominance</h1><br></br>
+            <p className="hero-subtitle" style={{ textAlign: "center" }}>
               We are Strategic Knights—a collective of innovators and strategists dedicated to transforming businesses in the digital realm.
             </p>
           </ScrollReveal>
@@ -67,28 +67,38 @@ const AboutPage = () => {
               <div className="flex items-start gap-5">
                 <div className="icon-container">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="vm-label">Mission</h3>
-                  <p className="section-text mt-3">
-                    To empower businesses with transformative digital solutions that drive growth, enhance brand value, and create a lasting impact.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-5">
-                <div className="icon-container">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
                 <div className="flex-1">
                   <h3 className="vm-label">Vision</h3>
                   <p className="section-text mt-3">
-                    To be the world's most trusted partner in digital innovation, setting new standards of excellence and leading our clients to unparalleled success.
+                    To be a strategic powerhouse that bridges innovation, creativity, and intelligence — empowering brands, businesses, and individuals to lead with impact in the digital age.
+We envision a future where strategy drives influence, technology shapes progress, and creativity inspires change.
                   </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-5">
+                <div className="icon-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="vm-label">Mission</h3>
+                  <p className="section-text mt-3">
+                    To craft transformative digital and strategic solutions that help our clients grow, adapt, and stand out.
+Through cutting-edge technology, data-driven insights, and human-centered design, we aim to:
+                 </p>
+              <ul className="list-disc list-inside mt-3">
+                <br></br>
+                <li>Build sustainable digital ecosystems.</li>
+                <li>Empower authentic brand voices and leadership.</li>
+                <li>Deliver measurable growth through innovation and strategy.</li>
+                <li>Shape experiences that connect purpose with performance.
+              </li>
+              </ul>
                 </div>
               </div>
             </div>
@@ -226,26 +236,7 @@ const AboutPage = () => {
   </div>
 </section>
 
-      {/* --- Our Partnerships Section --- */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <h2 className="section-title text-center">Our Partnerships</h2>
-            <p className="text-center section-text mb-12 max-w-3xl mx-auto">
-              Proud to partner with industry leaders to deliver exceptional value to our clients.
-            </p>
-          </ScrollReveal>
-          <div className="flex flex-wrap justify-center items-center gap-12">
-            <ScrollReveal>
-              <a href="https://ksglobals.com" target="_blank" rel="noopener noreferrer" className="partner-logo">
-                <img src={Ksglobals} alt="KS Globals" className="h-12 object-contain"/>
-              </a>
-            </ScrollReveal>
-            {/* Add more partners here */}
-          </div>
-        </div>
-      </section>
-
+     
       {/* --- CTA Section --- */}
       <section className="cta-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

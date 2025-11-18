@@ -2,10 +2,10 @@
 
 /* --- Foundational Theme Variables --- */
 :root {
-  --primary-color: #4A55A2;      /* A deeper, professional blue */
-  --primary-rgb: 74, 85, 162;    /* RGB version for use in rgba() */
-  --secondary-color: #7895CB;   /* A complementary lighter blue */
-  --accent-color: #A0BFE0;       /* A soft accent */
+  --primary-color: #15803D;      /* Dark Green */
+  --primary-rgb: 21, 128, 61;    /* RGB version for use in rgba() */
+  --secondary-color: #34D399;    /* Light Green accent */
+  --accent-color: #BBF7D0;       /* Softer pastel green */
   --dark-text: #1a202c;
   --body-text: #4a5568;
   --bg-light: #f7fafc;
@@ -27,25 +27,31 @@
 }
 
 .section-title {
-  font-size: 2.25rem; /* Reduced from 2.5rem */
+  font-size: 2.25rem;
   font-weight: 700;
   color: var(--dark-text);
-  margin-bottom: 0.75rem; /* Reduced from 1rem */
+  margin-bottom: 0.75rem;
   line-height: 1.2;
 }
 
 .section-text {
-  font-size: 1rem; /* Reduced from 1.125rem */
+  font-size: 1rem;
+  color: var(--body-text);
+  line-height: 1.6;
+}
+
+.list-disc {
+  font-size: 1rem;
   color: var(--body-text);
   line-height: 1.6;
 }
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 1.75rem; /* Reduced from 2rem */
+    font-size: 1.75rem;
   }
   .section-text {
-    font-size: 0.95rem; /* Reduced from 1rem */
+    font-size: 0.95rem;
   }
 }
 
@@ -53,12 +59,13 @@
 .about-hero {
   position: relative;
   height: 50vh;
+  width: 100%;
   min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white; /* Default color for text inside this section */
+  color: white;
   background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=1600&h=900&q=80') no-repeat center center/cover;
 }
 
@@ -72,28 +79,32 @@
   backdrop-filter: blur(2px);
 }
 
-.hero-content {
+.about-hero .hero-subtitle {
   position: relative;
   z-index: 2;
-  max-w: 4xl;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* This more specific selector ensures the title's color is applied */
 .about-hero .hero-title {
   font-size: 3rem;
   font-weight: 800;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  color: white; 
+  color: white;
 }
 
-/* --- CORRECTED RULE FOR SUBTITLE --- */
-/* This more specific selector ensures the subtitle's color is applied */
 .about-hero .hero-subtitle {
   font-size: 1.25rem;
   margin-top: 0.75rem;
   font-weight: 300;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  color: white; /* Explicitly setting color to white */
+  text-align: center;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -109,10 +120,10 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  border-radius: 16px; /* Increased for a softer look */
+  border-radius: 16px;
   background: linear-gradient(145deg, #ffffff, #e6e6e6);
   color: var(--primary-color);
-  box-shadow: 7px 7px 15px #c7c7c7, -7px -7px 15px #ffffff; /* Neumorphic shadow */
+  box-shadow: 7px 7px 15px #c7c7c7, -7px -7px 15px #ffffff;
   transition: all 0.3s ease-in-out;
 }
 
@@ -126,7 +137,7 @@
   padding: 0.5rem 1rem;
   background: rgba(var(--primary-rgb), 0.1);
   color: var(--primary-color);
-  border-radius: 50px; /* Pill-shaped for a modern feel */
+  border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -140,11 +151,12 @@
   color: #fff;
   transform: scale(1.05);
 }
+
 /* --- Foundation Section --- */
 .foundation-section {
   position: relative;
   background-color: var(--bg-light);
-  padding: 80px 0; /* Reduced from 120px */
+  padding: 80px 0;
 }
 
 /* --- Wave SVG Styles --- */
@@ -165,7 +177,7 @@
 
 /* --- Foundation Card Styles --- */
 .foundation-card {
-  --primary-color-rgb: 124, 58, 237;
+  --primary-color-rgb: 21, 128, 61;
   border-radius: 16px;
   padding: 2px;
   background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.4), rgba(var(--primary-color-rgb), 0.1));
@@ -198,7 +210,7 @@
   height: 56px;
   border-radius: 12px;
   background-color: rgba(var(--primary-color-rgb), 0.1);
-  color: #7C3AED;
+  color: #15803D;
   margin-bottom: 1rem;
 }
 
@@ -226,31 +238,31 @@
 
 /* --- CTA Section --- */
 .cta-section {
-  padding: 4rem 0; /* Reduced from 6rem */
-  background-image: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 4rem 0;
+  background: var(--brand-accent-green);
   color: white;
 }
 
 .cta-title {
-  font-size: 2.25rem; /* Reduced from 2.75rem */
+  font-size: 2.25rem;
   font-weight: 700;
   color: white;
 }
 
 .cta-text {
-  font-size: 1.1rem; /* Reduced from 1.25rem */
+  font-size: 1.1rem;
   max-width: 600px;
-  margin: 1rem auto 2rem; /* Adjusted margin */
+  margin: 1rem auto 2rem;
   opacity: 0.9;
   color: white;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 0.8rem 2rem; /* Reduced padding */
+  padding: 0.8rem 2rem;
   background-color: var(--bg-white);
   color: var(--primary-color);
-  font-size: 0.95rem; /* Reduced from 1rem */
+  font-size: 0.95rem;
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
@@ -259,7 +271,7 @@
 }
 
 .cta-button:hover {
-  transform: translateY(-4px) scale(1.03); /* Reduced hover effect */
+  transform: translateY(-4px) scale(1.03);
   background-color: var(--dark-text);
   color: var(--bg-white);
 }
